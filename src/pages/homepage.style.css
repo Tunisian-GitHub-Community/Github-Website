@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap");
+
+.HomePage{
+    font-family: "Roboto", sans-serif;;
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    transition: all 200ms;
+}
+
+.HomePage:hover{
+transform: scale(1.1);
+}
+span{
+    color: rgb(29, 153, 70);
+}

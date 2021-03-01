@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Homepage from "./pages/HomePage";
+import WhereToGoPage from "./pages/WhereToGoPage";
+import ErrorBoundry from "./ErrorBoundry";
+import Spinner from "./Spinner";
+/*
+<iframe title="iframe" id="typeform-full" width="100%" height="100%" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" src="https://form.typeform.com/to/l8JESrOz?typeform-medium=embed-snippet"></iframe>
+<script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
+*/
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Suspense fallback={<Spinner />}>
+      <div className="App">
+        <ErrorBoundry>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={Homepage} />
+              <Route component={WhereToGoPage} />
+            </Switch>
+          </BrowserRouter>
+        </ErrorBoundry>
+      </div>
+    </React.Suspense>
   );
 }
 
