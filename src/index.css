@@ -8,7 +8,7 @@
   html, #root{
 
 	  background-color: #111827;
-
+	user-select: none;
   } 
   .team{
 	  color: #1F2937;

@@ -1,17 +1,13 @@
 import React from 'react'
 import "./homepage.style.css";
-import Navbar from "./navbar";
-import Registration from "./registration";
+import Registration from "../components/Registration";
 
 
 function HomePage() {
     return (
         <div className="HomePage ">
-            <Navbar />
-          <Registration/>
-
-
-</div>
+            <Registration />
+        </div>
 
 
 
