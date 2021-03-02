@@ -1,12 +1,21 @@
 import React from 'react'
 import "./homepage.style.css";
+import Navbar from "./navbar";
+import Registration from "./registration";
+
+
 function HomePage() {
     return (
-        <div className="HomePage">
-            <p className="animate__animated animate__bounce">
-                registration for this month is done, See you in <span> April </span> 😅 !
-            </p>
-        </div>
+        <div className="HomePage ">
+            <Navbar />
+          <Registration/>
+
+
+</div>
+
+
+
+
     )
 }
 

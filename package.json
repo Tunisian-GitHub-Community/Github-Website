@@ -14,11 +14,11 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
-  },
+  }, 
   "eslintConfig": {
     "extends": [
       "react-app",
