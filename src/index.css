@@ -6,10 +6,21 @@
   }
   
   html, #root{
-
-	  background-color: #111827;
+	background-color: #111827;
 	user-select: none;
   } 
   .team{
 	  color: #1F2937;
+}
+.octo{
+	animation-name: blur;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+@keyframes blur {
+	0%   {filter: blur(0px);}
+	25%  {filter: blur(2px);}
+	50%  {filter: blur(4px);}
+	75%  {filter: blur(2px);}
+	100% {filter: blur(0px);}
   }
