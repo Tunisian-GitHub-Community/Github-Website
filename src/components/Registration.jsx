@@ -20,7 +20,7 @@ function Registration() {
             </div>
           </div>
           <div className="w-full md:w-1/2 text-center">
-            <img className="octo" src="./assets/registration.png" alt="octocat" />
+            <img className="octo " src="./assets/registration.png" alt="octocat" />
           </div>
         </div>
         <div className="w-64 md:w-96 h-96 md:h-full bg-gray-900 bg-opacity-30 absolute -top-64 md:-top-96 right-20 md:right-32 rounded-full pointer-events-none -rotate-45 transform" />

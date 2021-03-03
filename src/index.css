@@ -12,12 +12,7 @@
   .team{
 	  color: #1F2937;
 }
-.octo{
-	animation-name: blur;
-	animation-duration: 5s;
-	animation-iteration-count: infinite;
-    transition: all 400ms;
-}
+
 .octo:hover{
 	transform: scale(1.1);
 	opacity: 0.9;
