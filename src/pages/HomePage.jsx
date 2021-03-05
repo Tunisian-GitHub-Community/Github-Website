@@ -6,7 +6,6 @@ function HomePage() {
     return (
         <div className="HomePage ">
             <Registration />
-           
         </div>
     )
 }
