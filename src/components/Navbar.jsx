@@ -15,17 +15,23 @@ function Navbar() {
 
                 </div>
                 <div className="flex-shrink mx-auto items-center justify-between">
+                  <a href="/">
                   <h1 className="text-white  hover:text-white px-7 rounded-md text-base font-bold ">Github's</h1>
                   <h1 className="text-white  px-3 rounded-md text-xs font-thin ">Tunisian Commmunity </h1>
+                  </a>
                 </div>
                 <div className="hidden md:block  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  <div className="ml-10 flex items-baseline space-x-4">
-                    {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
 
-
-                  </div>
+       </div>
                 </div>
-              </div>
+                <div className="flex items-left">
+                <div class="inline-block ">
+                    <a href="survey" type="button" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-indigo-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center">
+                       Take Survey
+                    </a>
+                </div>
+                </div>
+          
 
 
             </div>

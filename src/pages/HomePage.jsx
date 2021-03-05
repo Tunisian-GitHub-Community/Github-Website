@@ -1,11 +1,15 @@
 import React from 'react'
 import "./homepage.style.css";
-import Registration from "../components/Registration";
+
+import Mainhome from "../components/mainhome";
+import RegistrationBanner from "../components/RegistrationBanner"
 
 function HomePage() {
     return (
         <div className="HomePage ">
-            <Registration />
+           <RegistrationBanner />
+            <Mainhome />
+           
         </div>
     )
 }

@@ -14,10 +14,7 @@ html,body, #root,.Survey{
   user-select: none;
 } 
 
-.octo:hover{
-	transform: scale(1.1);
-	opacity: 0.9;
-}
+
 .error {
 	user-select: none; /* Standard */
 	padding: 5%;
@@ -46,9 +43,8 @@ html,body, #root,.Survey{
   
   body::-webkit-scrollbar {
 	width: 10px;
-	background-color: rgb(153, 15, 15);
+	background-color: #374151
   }
   
   body::-webkit-scrollbar-thumb {
-	background-color: rgb(153, 15, 15);
-  }
+	background-color:#374151 }
