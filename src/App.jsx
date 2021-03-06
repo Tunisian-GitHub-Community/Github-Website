@@ -22,7 +22,7 @@ function App() {
               <Route path="*" component={WhereToGoPage} />
             </Switch>
             <IconToOrg />
-            <Footer/>
+            <Footer />
           </BrowserRouter>
         </ErrorBoundry>
       </div>

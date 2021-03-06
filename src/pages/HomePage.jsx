@@ -9,12 +9,9 @@ import Header from "../components/Header";
 function HomePage() {
     return (
         <div className="HomePage ">
-           <RegistrationBanner />
-              <Header/>
+            <RegistrationBanner />
+            <Header />
             <Mainhome />
-            
-             
-           
         </div>
     )
 }
