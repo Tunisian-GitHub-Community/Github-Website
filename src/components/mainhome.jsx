@@ -3,10 +3,7 @@ import React from 'react'
 function Mainhome() {
     return (
         <div className="Mainhome ">
-        
-
     <div className="min-h-screen bg-gray-800">
-    
       <main>
         <div className="py-12">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -15,8 +12,8 @@ function Mainhome() {
                 <div className="p-6 border-b  bg-gray-800 border-gray-700 sm:px-20">
                  
                   <div className="mt-8 text-2xl text-gray-200"> Fill the gap between learning and creating. </div>
-                  <div className="mt-6 text-gray-400"> Github Tunisia is a digital Community built-in by students , for students. 
-                  we host weekly talks in our  Discord Server and monthly challenges.<br/> 
+                  <div className="mt-6 text-gray-400"> Github Tunisia is a digital Community built by students, for students. 
+                  we host weekly talks in our Discord Server and monthly challenges.<br/> 
                   Our main focus in on practice and the power of Making because we believe learning alone isn't enough. </div>
                 </div>
                 <div className="grid grid-cols-1  bg-opacity-25 bg-gray-800 md:grid-cols-2">
@@ -28,7 +25,7 @@ function Mainhome() {
                         
                       </svg>
                       <div className="ml-4 text-lg font-semibold leading-7  text-gray-200">
-                        <a href="https://laravel.com/docs">Weekly Talks</a>
+                     Weekly Talks
                       </div>
                     </div>
                     <div className="ml-12">
@@ -37,9 +34,9 @@ function Mainhome() {
                         We invite special guests to share their knowledge and experiences.
                        
                       </div><a href="https://discord.gg/MzXu6mM5eN">
-                        <div className="flex items-center mt-3 text-sm font-semibold text-indigo-400 hover:underline">
+                        <div className="flex items-center mt-3 text-sm font-semibold text-green-400 hover:underline">
                           <div>Our Discord Server</div>
-                          <div className="ml-1 text-indigo-500"><svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                          <div className="ml-1 text-green-500"><svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                               <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg></div>
                         </div>
@@ -53,15 +50,15 @@ function Mainhome() {
 </svg>
                       </svg>
                       <div className="ml-4 text-lg font-semibold leading-7 text-gray-200">
-                        <a href="https://laracasts.com">Monthly Challenges</a>
+                        Monthly Challenges
                       </div>
                     </div>
                     <div className="ml-12">
                       <div className="mt-2 text-sm text-gray-400"> Monthly Challenges are open to all Students across Tunisia to participate,
                        we take the opportunity to encourage students practicing their knowledge and improve their technical skills </div><a href="https://github.com/Tunisian-GitHub-Community">
-                        <div className="flex items-center mt-3 text-sm font-semibold text-indigo-400 hover:underline">
+                        <div className="flex items-center mt-3 text-sm font-semibold text-green-400 hover:underline">
                           <div>Our Github</div>
-                          <div className="ml-1 text-indigo-500"><svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                          <div className="ml-1 text-green-500"><svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                               <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg></div>
                         </div>
@@ -75,7 +72,7 @@ function Mainhome() {
 </svg>
                       </svg>
                       <div className="ml-4 text-lg font-semibold leading-7 text-gray-200">
-                        <a href="https://tailwindcss.com/">Mentoring</a>
+                       Mentoring
                       </div>
                     </div>
                     <div className="ml-12">
