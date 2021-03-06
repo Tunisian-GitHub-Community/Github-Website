@@ -23,7 +23,7 @@ function RegistrationBanner() {
         <p className="ml-3 font-medium text-white truncate">
           
           <span className=" md:inline">
-            This month's challenge
+            This month's 
             registration is closed.
           </span>
         </p>

@@ -7,6 +7,7 @@ import ErrorBoundry from "./components/ErrorBoundry";
 import Spinner from "./components/Spinner";
 import Navbar from "./components/Navbar";
 import IconToOrg from "./components/IconToOrg";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="*" component={WhereToGoPage} />
             </Switch>
             <IconToOrg />
+            <Footer/>
           </BrowserRouter>
         </ErrorBoundry>
       </div>
