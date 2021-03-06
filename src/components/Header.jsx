@@ -17,8 +17,7 @@ function Header() {
         </span>
             </h1>
             <p className="text-sm sm:text-base text-white py-6">
-              Github's Tunisian Community is a place for Student Developers to share , engage and collobarate.
-      </p>
+              A community of students passionate about technologies, our goal is to fill the gap between what we learn in university and what the job market actually requires.</p>
             <div className="flex mt-8">
               <a href="https://github.com/Tunisian-GitHub-Community" className="uppercase py-2 px-4 rounded-lg bg-green-600 border-2 border-transparent text-white text-md mr-4 hover:bg-green-900">
                 Our Github
@@ -29,7 +28,7 @@ function Header() {
             </div>
           </div>
           <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
-            <img src="/assets/header.png" className="max-w-xs md:max-w-sm m-auto" />
+            <img src="/assets/header.png" alt="header" className="max-w-xs md:max-w-sm m-auto" />
           </div>
         </div>
       </div>

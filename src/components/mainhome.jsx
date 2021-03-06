@@ -9,29 +9,19 @@ function Mainhome() {
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="overflow-hidden  shadow-xl bg-gray-800 sm:rounded-lg">
               <div>
-                <div className="p-6 border-b  bg-gray-800 border-gray-700 sm:px-20">
-                 
-                  <div className="mt-8 text-2xl text-gray-200"> Fill the gap between learning and creating. </div>
-                  <div className="mt-6 text-gray-400"> Github Tunisia is a digital Community built by students, for students. 
-                  we host weekly talks in our Discord Server and monthly challenges.<br/> 
-                  Our main focus in on practice and the power of Making because we believe learning alone isn't enough. </div>
-                </div>
-                <div className="grid grid-cols-1  bg-opacity-25 bg-gray-800 md:grid-cols-2">
+                <div className="grid grid-cols-1 bg-opacity-25 bg-gray-800 md:grid-cols-2">
                   <div className="p-6">
                     <div className="flex items-center"><svg fill="none" stroke="currentColor"  viewBox="0 0 24 24" className="w-8 h-8 text-gray-400 dark:text-gray-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="">
   <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
 </svg>
-                        
                       </svg>
                       <div className="ml-4 text-lg font-semibold leading-7  text-gray-200">
                      Weekly Talks
                       </div>
                     </div>
                     <div className="ml-12">
-                      <div className="mt-2 text-sm text-gray-400"> Github's Tunisian Community organize weekly "Talks"
-                       and debates on all kinds of subjects related to IT industry and Development.   
-                        We invite special guests to share their knowledge and experiences.
+                      <div className="mt-2 text-sm text-gray-400"> We host weekly talks on our Discord Server. Debate all kinds of subjects related to the IT industry and software development, also having a special guest for every meeting, providing the chance for students to share their knowledge and hopefully answer all their questions.   
                        
                       </div><a href="https://discord.gg/MzXu6mM5eN">
                         <div className="flex items-center mt-3 text-sm font-semibold text-green-400 hover:underline">
@@ -54,8 +44,8 @@ function Mainhome() {
                       </div>
                     </div>
                     <div className="ml-12">
-                      <div className="mt-2 text-sm text-gray-400"> Monthly Challenges are open to all Students across Tunisia to participate,
-                       we take the opportunity to encourage students practicing their knowledge and improve their technical skills </div><a href="https://github.com/Tunisian-GitHub-Community">
+                      <div className="mt-2 text-sm text-gray-400">We organize monthly challenges that are open to all Students across Tunisia, with the goal of encouraging students to expand their knowledge and improve their technical skills.</div><a href="https://github.com/Tunisian-GitHub-Community">
+                        <br/>
                         <div className="flex items-center mt-3 text-sm font-semibold text-green-400 hover:underline">
                           <div>Our Github</div>
                           <div className="ml-1 text-green-500"><svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
@@ -76,9 +66,7 @@ function Mainhome() {
                       </div>
                     </div>
                     <div className="ml-12">
-                      <div className="mt-2 text-sm text-gray-400"> We've all been there, lost , confused and we've all had some burn-outs 
-                      or impostor syndrome  Especially in the IT industry where it's so common. <br/> that's why we provide Guidance and Mentoring to our Commmunity members
-                      on a daily basis.
+                      <div className="mt-2 text-sm text-gray-400">We've all been there! lost, confused, and burned-out. Some of us suffered from impostor syndrome. <br/> that's why we provide guidance and mentoring to our Community members on a daily basis.
                       </div>
                     </div>
                   </div>
@@ -93,8 +81,7 @@ function Mainhome() {
                     </div>
                     <div className="ml-12">
                       <div className="mt-2 text-sm text-gray-400">
-                       Collaboration is key to pair Programming, that's why we encourage pair programming and advise students to engage together and 
-                       participate in our monthly challenges together to achieve something meaningful together and improve on their Soft Skills. </div>
+                      Programming is a team sport, that's why we highly encourage pair programming and advise students to work together on monthly challenges to achieve more and improve on their Soft Skills. </div>
                     </div>
                   </div>
                 </div>
