@@ -11,12 +11,11 @@
 html,body, #root,.Survey{
 	height: 100vh;
   background-color: #111827;
-  user-select: none;
 } 
 
 
-.error {
-	user-select: none; /* Standard */
+.WhereToGoPage {
+	 /* user-select: none; */
 	padding: 5%;
 	display: flex;
 	flex-wrap: wrap;
