@@ -14,7 +14,7 @@ export default class ErrorBoundry extends Component {
   }
 
   componentDidCatch(error, info) {
-    console.log(error + "o93ed ghady ");
+    console.log(error + " o93ed ghady ");
   }
 
   render() {

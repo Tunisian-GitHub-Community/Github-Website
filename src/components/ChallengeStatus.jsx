@@ -19,7 +19,7 @@ function ChallengeStatus() {
 
                 <span className=" md:inline">
                   This month's
-                  registration is closed.
+                  registration is open.
           </span>
               </p>
             </div>

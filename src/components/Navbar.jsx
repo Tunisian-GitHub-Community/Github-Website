@@ -11,7 +11,6 @@ function Navbar() {
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <img className="h-10 w-10" src="./assets/logo.png" alt="Github's Tunisian Community" />
-
                 </div>
                 <div className="flex-shrink mx-auto items-center justify-between">
                   <a href="/">
@@ -26,7 +25,7 @@ function Navbar() {
               <div className="flex items-left">
                 <div className="inline-block ">
                   <a href="survey" type="button" className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center">
-                    Take Survey
+                    Join The Challenge!
                     </a>
                 </div>
               </div>
