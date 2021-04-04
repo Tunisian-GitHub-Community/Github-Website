@@ -1,5 +1,5 @@
 import React from 'react'
-{/* the component to show our Team */ }
+{/* the component to show our Team  This Component Exist in "TeamPage" Page.*/  }
 function Team({ teams }) {
     console.log(teams[0]);
     return (
@@ -14,7 +14,7 @@ function Team({ teams }) {
     {teams.map((team, i) => {
          return (< div key={i} className="p-2 lg:w-1/3 md:w-1/2 w-full"  >
    
-        <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+        <div className="h-full flex items-center border-gray-800 border p-4 rounded-lg">
           <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={team.img} />
           <div className="flex-grow">
             <h2 className="text-white title-font font-medium">{team.name}</h2>
