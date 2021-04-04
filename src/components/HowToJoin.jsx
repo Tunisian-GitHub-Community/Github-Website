@@ -1,7 +1,4 @@
-import React from "react";
-{
-  /* the component to show instructions on how to join us,  This Component Exist in "TeamPage" Page.*/
-}
+/* the component to show instructions on how to join us,  This Component Exist in "TeamPage" Page.*/
 function HowToJoin() {
   return (
     <div>

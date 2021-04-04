@@ -47,7 +47,7 @@ export default function Navbar() {
                     >
                       Team
                     </NavLink>
-                 {/*    <NavLink
+                    {/*    <NavLink
                       strict
                       to="/#"
                       className="text-gray-600 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
@@ -164,7 +164,7 @@ export default function Navbar() {
                 >
                   Team
                 </NavLink>
-               {/* <NavLink
+                {/* <NavLink
                   exact
                   to="/projects"
                   className="text-gray-300 hover:bg-gray-700 bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
