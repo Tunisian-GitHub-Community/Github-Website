@@ -1,17 +1,34 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-function FormPage() {
+import { selectChallengeData } from '../redux/challenge/challenge.selector';
+
+function FormPage({ challenge }) {
     React.useEffect(() => {
+        // adding typeform's javascript to index
         const script = document.createElement("script");
         script.src = "https://embed.typeform.com/embed.js";
         script.type = 'text/javascript';
         script.async = true;
-    }, [])
+
+    }, [challenge])
+    let render = <div>sorry</div>;
+    if (challenge.isOpen) render = <iframe title='challenge' id="typeform-full" width="100%" height="100%" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" src={challenge.formLink}></iframe>
+    if (challenge.reviewTime) render = <iframe title='challenge' id="typeform-full" width="100%" height="100%" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" src={challenge.formLink}></iframe>
+
     return (
-        <div className="Survey" id="survey">
-            <iframe title='challenge' id="typeform-full" width="100%" height="100%" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" src="https://form.typeform.com/to/l8JESrOz?typeform-medium=embed-snippet"></iframe>
+        <div className="form">
+            {
+                render
+            }
         </div>
     )
 }
 
-export default FormPage
+const mapStateToProps = createStructuredSelector({
+    challenge: selectChallengeData
+});
+
+export default connect(mapStateToProps)(FormPage);
+
