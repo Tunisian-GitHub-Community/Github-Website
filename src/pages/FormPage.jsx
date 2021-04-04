@@ -1,11 +1,11 @@
-import React from 'react'
+import { useEffect } from 'react'
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { selectChallengeData } from '../redux/challenge/challenge.selector';
 
 function FormPage({ challenge }) {
-    React.useEffect(() => {
+    useEffect.useEffect(() => {
         // adding typeform's javascript to index
         const script = document.createElement("script");
         script.src = "https://embed.typeform.com/embed.js";
