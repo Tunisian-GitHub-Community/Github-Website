@@ -1,7 +1,6 @@
 import React from 'react'
 
 function ActiviesGrid({ cards }) {
-  console.log(cards[1]);
   return (
     <div className="Mainhome ">
       <div className="min-h-screen bg-gray-800">
