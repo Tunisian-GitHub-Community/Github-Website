@@ -18,7 +18,7 @@ function ChallengeStatus({ challenge }) {
   }
   if (challenge.reviewTime) {
     status.text = "We'd like to know your feedback."
-    status.color = "bg-blue-600"
+    status.color = "bg-yellow-600"
   }
 
   return (
