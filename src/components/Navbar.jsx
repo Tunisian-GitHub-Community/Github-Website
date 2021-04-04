@@ -32,32 +32,42 @@ export default function Navbar() {
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
 
                     <NavLink
-                      exact to="/"
+                      exact
+                      to="/"
                       className=" text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
                       activeClassName="bg-gray-900 text-white rounded-md text-sm font-medium"
                     >
                       Home
                     </NavLink>
                     <NavLink
-                      exact to="/team"
+                      exact
+                      to="/team"
                       className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
                       activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                     >
                       Team
                     </NavLink>
-                    <NavLink
-                      exact to="/projects"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                 {/*    <NavLink
+                      strict
+                      to="/#"
+                      className="text-gray-600 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
                     >
                       Projects
-                    </NavLink>
+                      <button
+                        type="button"
+                        class="w-8 h-8 text-base  rounded-full text-white bg-red-500"
+                      >
+                        <span class="p-1">2/span>
+                      </button>
+  </NavLink> */}
+
                     <NavLink
-                      exact to="/about-us"
+                      exact
+                      to="/guidelines"
                       className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
                       activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                     >
-                      About us
+                      Guidelines
                     </NavLink>
                   </div>
                 </div>
@@ -136,47 +146,49 @@ export default function Navbar() {
               }
               id="mobile-menu"
             >
-
               <div className=" container px-2 pt-2 pb-3 space-y-1  sm:px-3">
                 {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                 <NavLink
-                  exact to="/"
+                  exact
+                  to="/"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                 >
                   Home
-                    </NavLink>
+                </NavLink>
                 <NavLink
-                  exact to="/team"
+                  exact
+                  to="/team"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                 >
                   Team
-                    </NavLink>
-                <NavLink
-                  exact to="/projects"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                </NavLink>
+               {/* <NavLink
+                  exact
+                  to="/projects"
+                  className="text-gray-300 hover:bg-gray-700 bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Projects
-                    </NavLink>
+            </NavLink> */}
                 <NavLink
-                  exact to="/about-us"
+                  exact
+                  to="/guidelines"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                 >
-                  About us
-                    </NavLink>
+                  Guidelines
+                </NavLink>
                 <NavLink
-                  exact to="/form"
+                  exact
+                  to="/form"
                   className="text-white bg-green-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Join the Challenge
-                  </NavLink>
+                </NavLink>
               </div>
             </div>
           </div>
-
         </nav>
       </div>
     </>

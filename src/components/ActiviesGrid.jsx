@@ -20,7 +20,7 @@ function ActiviesGrid({ cards }) {
                           </div>
                         </div>
                         <div className="ml-12">
-                          <div className="mt-2 text-sm text-gray-400">{card.text}
+                          <div className="mt-2 text-sm text-gray-400"> {card.text}
 
                           </div>
                           {
