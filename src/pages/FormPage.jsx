@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Survey() {
+function FormPage() {
     React.useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://embed.typeform.com/embed.js";
@@ -14,4 +14,4 @@ function Survey() {
     )
 }
 
-export default Survey
+export default FormPage

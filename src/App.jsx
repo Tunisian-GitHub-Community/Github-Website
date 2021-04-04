@@ -1,8 +1,13 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+
 import Homepage from "./pages/HomePage";
 import Teampage from "./pages/TeamPage";
-import Survey from "./pages/Survey";
+import FormPage from "./pages/FormPage";
+import AboutUsPage from "./pages/AboutUsPage";
+import ProjectsPage from "./pages/ProjectsPage";
+
+
 import WhereToGoPage from "./pages/WhereToGoPage";
 import ErrorBoundry from "./components/ErrorBoundry";
 import Spinner from "./components/Spinner";
@@ -19,9 +24,10 @@ function App() {
             <Navbar />
             <Switch>
               <Route exact path="/" component={Homepage} />
-              <Route exact path="/survey" component={Survey} />
-              <Route exact path="/survey" component={Survey} />
               <Route exact path="/team" component={Teampage} />
+              <Route exact path="/projects" component={ProjectsPage} />
+              <Route exact path="/about-us" component={AboutUsPage} />
+              <Route exact path="/form" component={FormPage} />
               <Route path="*" component={WhereToGoPage} />
             </Switch>
             <IconToOrg />

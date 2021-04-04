@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Navbar({ fixed }) {
+export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
@@ -32,7 +32,7 @@ export default function Navbar({ fixed }) {
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
 
                     <NavLink
-                     exact to="/"
+                      exact to="/"
                       className=" text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
                       activeClassName="bg-gray-900 text-white rounded-md text-sm font-medium"
                     >
@@ -53,7 +53,7 @@ export default function Navbar({ fixed }) {
                       Projects
                     </NavLink>
                     <NavLink
-                     exact  to="/about-us"
+                      exact to="/about-us"
                       className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
                       activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                     >
@@ -129,54 +129,54 @@ export default function Navbar({ fixed }) {
                 </button>
               </div>
             </div>
-           
-              <div
-                className={
-                  "md:hidden  ease-in-out" + (navbarOpen ? " flex" : " hidden")
-                }
-                id="mobile-menu"
-              >
-         
-                <div className=" container px-2 pt-2 pb-3 space-y-1  sm:px-3">
-                  {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                  <NavLink
-                     exact to="/"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                    >
-                      Home
+
+            <div
+              className={
+                "md:hidden  ease-in-out" + (navbarOpen ? " flex" : " hidden")
+              }
+              id="mobile-menu"
+            >
+
+              <div className=" container px-2 pt-2 pb-3 space-y-1  sm:px-3">
+                {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+                <NavLink
+                  exact to="/"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                >
+                  Home
                     </NavLink>
-                    <NavLink
-                      exact to="/team"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                    >
-                      Team
+                <NavLink
+                  exact to="/team"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                >
+                  Team
                     </NavLink>
-                    <NavLink
-                      exact to="/projects"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                    >
-                      Projects
+                <NavLink
+                  exact to="/projects"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                >
+                  Projects
                     </NavLink>
-                    <NavLink
-                     exact  to="/about-us"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                    >
-                      About us
+                <NavLink
+                  exact to="/about-us"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                >
+                  About us
                     </NavLink>
-                  <a
-                    href="/survey"
-                    className="text-white bg-green-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  >
-                    Join the Challenge
-                  </a>
-                  </div>
-                </div>
+                <NavLink
+                  exact to="/form"
+                  className="text-white bg-green-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Join the Challenge
+                  </NavLink>
               </div>
-     
+            </div>
+          </div>
+
         </nav>
       </div>
     </>
