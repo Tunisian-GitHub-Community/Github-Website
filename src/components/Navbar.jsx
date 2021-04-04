@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -22,37 +23,42 @@ export default function Navbar({ fixed }) {
                       Github's
                     </h1>
                     <h1 className="text-white  px-3 rounded-md text-xs font-thin ">
-                      Tunisian Commmunity{" "}
+                      Tunisian Commmunity
                     </h1>
                   </a>
                 </div>
                 <div className="hidden md:block  ">
                   <div className=" mx-10 px-4 flex items-baseline">
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <a
-                      href="/"
-                      className="bg-gray-900 text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+
+                    <NavLink
+                     exact to="/"
+                      className=" text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                      activeClassName="bg-gray-900 text-white rounded-md text-sm font-medium"
                     >
                       Home
-                    </a>
-                    <a
-                      href="/team"
+                    </NavLink>
+                    <NavLink
+                      exact to="/team"
                       className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                     >
                       Team
-                    </a>
-                    <a
-                      href="/projects"
+                    </NavLink>
+                    <NavLink
+                      exact to="/projects"
                       className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                     >
                       Projects
-                    </a>
-                    <a
-                      href="/projects"
+                    </NavLink>
+                    <NavLink
+                     exact  to="/about-us"
                       className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                     >
                       About us
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -123,49 +129,54 @@ export default function Navbar({ fixed }) {
                 </button>
               </div>
             </div>
-            <div className="flex items-left">
+           
               <div
                 className={
                   "md:hidden  ease-in-out" + (navbarOpen ? " flex" : " hidden")
                 }
                 id="mobile-menu"
               >
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+         
+                <div className=" container px-2 pt-2 pb-3 space-y-1  sm:px-3">
                   {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                  <a
-                    href="/"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="/team"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  >
-                    Team
-                  </a>
-                  <a
-                    href="/projects"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  >
-                    Projects
-                  </a>
-                  <a
-                    href="/about-us"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  >
-                    About us
-                  </a>
+                  <NavLink
+                     exact to="/"
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                    >
+                      Home
+                    </NavLink>
+                    <NavLink
+                      exact to="/team"
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                    >
+                      Team
+                    </NavLink>
+                    <NavLink
+                      exact to="/projects"
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                    >
+                      Projects
+                    </NavLink>
+                    <NavLink
+                     exact  to="/about-us"
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                    >
+                      About us
+                    </NavLink>
                   <a
                     href="/survey"
                     className="text-white bg-green-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Join the Challenge
                   </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+     
         </nav>
       </div>
     </>

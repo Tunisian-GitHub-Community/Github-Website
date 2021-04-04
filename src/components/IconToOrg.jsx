@@ -1,5 +1,5 @@
 import React from 'react'
-
+{/* This is the Component that shows a Small Logo on left side of the websoite */ }
 function IconToOrg() {
     return (
         <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10 ">
