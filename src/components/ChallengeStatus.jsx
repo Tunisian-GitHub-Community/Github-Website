@@ -1,12 +1,29 @@
-import React from 'react'
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-function ChallengeStatus() {
-  function hide() {
+import { selectChallengeData } from '../redux/challenge/challenge.selector';
+
+function ChallengeStatus({ challenge }) {
+  const hide = () => {
     document.getElementById('hide').style.display = 'none';
   };
+
+  let status = {
+    text: "This month's registration is closed.",
+    color: "bg-red-600"
+  };
+  if (challenge.isOpen) {
+    status.text = "This month's registration is open."
+    status.color = "bg-green-600"
+  }
+  if (challenge.reviewTime) {
+    status.text = "We'd like to know your feedback."
+    status.color = "bg-blue-600"
+  }
+
   return (
     <div className="RegistrationBanner">
-      <div className="bg-green-600" id="hide">
+      <div className={status.color} id="hide">
         <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between flex-wrap">
             <div className="w-0 flex-1 flex items-center">
@@ -16,11 +33,9 @@ function ChallengeStatus() {
                 </svg>
               </span>
               <p className="ml-3 font-medium text-white truncate">
-
                 <span className=" md:inline">
-                  This month's
-                  registration is open.
-          </span>
+                  {status.text}
+                </span>
               </p>
             </div>
 
@@ -39,6 +54,9 @@ function ChallengeStatus() {
   )
 }
 
+const mapStateToProps = createStructuredSelector({
+  challenge: selectChallengeData
+});
 
 
-export default ChallengeStatus
+export default connect(mapStateToProps)(ChallengeStatus)
