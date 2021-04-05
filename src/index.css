@@ -14,6 +14,9 @@ html,body, #root,.form{
   user-select: none;
 } 
 
+*:focus {
+    outline: 0 !important;
+}
 
 .WhereToGoPage {
 	 /* user-select: none; */
