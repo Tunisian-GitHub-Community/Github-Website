@@ -1,8 +1,33 @@
-import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectChallengeData } from '../redux/challenge/challenge.selector';
 
-export default function Navbar() {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+const Navbar = ({ challenge }) => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
+  let navButton = null
+  if (challenge.isOpen) {
+    navButton = <NavLink
+      to="/form"
+      type="button"
+      className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
+    >
+      Join The Challenge!
+</NavLink>
+  }
+  if (challenge.reviewTime) {
+    navButton = <NavLink
+      to="/form"
+      type="button"
+      className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-yellow-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
+    >
+      Feedback!
+      </NavLink>
+  }
+
+
   return (
     <>
       <div className="navbar">
@@ -18,14 +43,14 @@ export default function Navbar() {
                   />
                 </div>
                 <div className="flex-shrink mx-auto items-center justify-between">
-                  <a href="/">
+                  <NavLink to="/">
                     <h1 className="text-white  hover:text-white px-7 rounded-md text-base font-bold ">
                       Github's
                     </h1>
                     <h1 className="text-white  px-3 rounded-md text-xs font-thin ">
                       Tunisian Commmunity
                     </h1>
-                  </a>
+                  </NavLink>
                 </div>
                 <div className="hidden md:block  ">
                   <div className=" mx-10 px-4 flex items-baseline">
@@ -72,17 +97,9 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-              {/* TO DO : this Button should change according to the active component: if the Survey component active is active = it should 
-              display "Take Survey" */}
               <div className="hidden md:block flex items-left">
                 <div className="inline-block ">
-                  <a
-                    href="survey"
-                    type="button"
-                    className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
-                  >
-                    Join The Challenge!
-                  </a>
+                  {navButton}
                 </div>
               </div>
 
@@ -179,13 +196,7 @@ export default function Navbar() {
                 >
                   Guidelines
                 </NavLink>
-                <NavLink
-                  exact
-                  to="/form"
-                  className="text-white bg-green-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Join the Challenge
-                </NavLink>
+                {navButton}
               </div>
             </div>
           </div>
@@ -194,3 +205,11 @@ export default function Navbar() {
     </>
   );
 }
+
+const mapStateToProps = createStructuredSelector({
+  challenge: selectChallengeData
+});
+
+
+
+export default connect(mapStateToProps)(Navbar)
