@@ -4,11 +4,11 @@ function ActiviesGrid({ cards }) {
   console.log(cards[1]);
   return (
     <div className="Mainhome ">
-      <div className="min-h-screen bg-gray-800">
+      <div className=" bg-gray-900">
         <main>
-          <div className="py-12">
-            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-              <div className="overflow-hidden  shadow-xl bg-gray-800 sm:rounded-lg">
+          <div className="py-15 pb-20">
+            <div className="mx-auto max-w-7xl py-25 sm:px-6 lg:px-8">
+              <div className="overflow-hidden   bg-gray-800 sm:rounded-lg">
                 <div>
                   <div className="grid grid-cols-1 bg-opacity-25 bg-gray-800 md:grid-cols-2">
                     {cards.map((card, i) => {

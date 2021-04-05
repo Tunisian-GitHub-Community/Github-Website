@@ -4,6 +4,7 @@ import ActiviesGrid from "../components/ActiviesGrid";
 import ChallengeStatus from "../components/ChallengeStatus";
 import Header from "../components/Header";
 import cardsData from "./HomePage.data";
+import Meet from '../components/meet';
 
 
 function HomePage() {
@@ -12,6 +13,8 @@ function HomePage() {
             <ChallengeStatus />
             <Header />
             <ActiviesGrid cards={cardsData} />
+            <Meet/>
+            
         </div>
     )
 }
