@@ -50,13 +50,15 @@ const teamData = [
         img:"https://avatars.githubusercontent.com/u/78981943?v=4"
 
     },
+
     {
-        name:"Chahine Rekik",
+        name:"mohamed kamel hamdouni",
         description:"",
-        link:"https://github.com/RekikChahine",
-        img:"https://avatars.githubusercontent.com/u/58332328?v=4"
+        link:"https://github.com/medkamelhamdouni",
+        img:"https://avatars.githubusercontent.com/u/33313502?v=4"
 
     },
+  
 
 ];
 export default teamData;
