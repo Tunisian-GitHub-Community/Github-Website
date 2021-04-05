@@ -3,7 +3,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { selectChallengeData } from '../redux/challenge/challenge.selector';
 
-function ChallengeStatus({ challenge }) {
+const ChallengeStatus = ({ challenge }) => {
   const hide = () => {
     document.getElementById('hide').style.display = 'none';
   };
