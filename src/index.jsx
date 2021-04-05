@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import * as serviceWorker from './serviceWorker';
 
 import { store, persistor } from './redux/store';
 ReactDOM.render(
@@ -18,3 +19,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 reportWebVitals();
+serviceWorker.register();
+
