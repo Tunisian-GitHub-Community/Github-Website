@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectChallengeData } from '../redux/challenge/challenge.selector';
 
 function FormPage({ challenge }) {
-    useEffect.useEffect(() => {
+    useEffect(() => {
         // adding typeform's javascript to index
         const script = document.createElement("script");
         script.src = "https://embed.typeform.com/embed.js";
