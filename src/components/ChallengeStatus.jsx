@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -8,17 +9,17 @@ const ChallengeStatus = ({ challenge }) => {
     document.getElementById('hide').style.display = 'none';
   };
 
-  let status = {
+  const status = {
     text: "This month's registration is closed.",
-    color: "bg-red-600"
+    color: 'bg-red-600',
   };
   if (challenge.isOpen) {
-    status.text = "This month's registration is open."
-    status.color = "bg-green-600"
+    status.text = "This month's registration is open.";
+    status.color = 'bg-green-600';
   }
   if (challenge.reviewTime) {
-    status.text = "We'd like to know your feedback."
-    status.color = "bg-yellow-600"
+    status.text = "We'd like to know your feedback.";
+    status.color = 'bg-yellow-600';
   }
 
   return (
@@ -51,12 +52,11 @@ const ChallengeStatus = ({ challenge }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
-  challenge: selectChallengeData
+  challenge: selectChallengeData,
 });
 
-
-export default connect(mapStateToProps)(ChallengeStatus)
+export default connect(mapStateToProps)(ChallengeStatus);

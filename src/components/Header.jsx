@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Header() {
   return (
@@ -6,23 +6,23 @@ function Header() {
       <div className="bg gradient">
         <div className="container mx-auto px-6 flex relative py-16">
           <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
-            <span className="w-20 h-2 bg-white mb-12">
-            </span>
+            <span className="w-20 h-2 bg-white mb-12" />
             <h1 className="animate__animated animate__fadeIn font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none text-white ">
               Digital
-        <span className="text-5xl text-gray-900 sm:text-7xl">
+              <span className="text-5xl text-gray-900 sm:text-7xl">
                 Community
-        </span>
+              </span>
             </h1>
-            <p className="text-sm sm:text-base text-white py-6">
-              A community of students passionate about technologies, our goal is to fill the gap between what we learn in university and what the job market actually requires.</p>
+            <h6 className="text-sm sm:text-base text-white py-6">
+              A community of students passionate about technologies, our goal is to fill the gap between what we learn in university and what the job market actually requires.
+            </h6>
             <div className="flex mt-8">
               <a href="https://github.com/Tunisian-GitHub-Community" target="_blank" className=" py-2 px-4 rounded-lg bg-gray-900 border-2 border-transparent text-white text-md mr-4 hover:bg-gray-800" rel="noreferrer">
                 Our Github
-        </a>
+              </a>
               <a href="https://discord.gg/MzXu6mM5eN" target="_blank" className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-gray-900 text-gray-900 font-bold hover:border-gray-800  hover:text-gray-800 text-md" rel="noreferrer">
                 Engage
-        </a>
+              </a>
             </div>
           </div>
           <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative ">
@@ -46,7 +46,7 @@ function Header() {
       </div>
     </div>
 
-  )
+  );
 }
 
-export default Header
+export default Header;
