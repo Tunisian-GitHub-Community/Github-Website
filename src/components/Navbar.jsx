@@ -1,32 +1,37 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { selectChallengeData } from '../redux/challenge/challenge.selector';
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectChallengeData } from "../redux/challenge/challenge.selector";
 
 const Navbar = ({ challenge }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  
+  
 
-  let navButton = null
+  let navButton = null;
   if (challenge.isOpen) {
-    navButton = <NavLink
-      to="/form"
-      type="button"
-      className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
-    >
-      Join The Challenge!
-</NavLink>
+    navButton = (
+      <NavLink
+        to="/form"
+        type="button"
+        className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
+      >
+        Join The Challenge!
+      </NavLink>
+    );
   }
   if (challenge.reviewTime) {
-    navButton = <NavLink
-      to="/form"
-      type="button"
-      className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-yellow-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
-    >
-      Feedback!
+    navButton = (
+      <NavLink
+        to="/form"
+        type="button"
+        className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-yellow-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
+      >
+        Feedback!
       </NavLink>
+    );
   }
-
 
   return (
     <>
@@ -72,19 +77,6 @@ const Navbar = ({ challenge }) => {
                     >
                       Team
                     </NavLink>
-                    {/*    <NavLink
-                      strict
-                      to="/#"
-                      className="text-gray-600 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                    >
-                      Projects
-                      <button
-                        type="button"
-                        class="w-8 h-8 text-base  rounded-full text-white bg-red-500"
-                      >
-                        <span class="p-1">2/span>
-                      </button>
-  </NavLink> */}
 
                     <NavLink
                       exact
@@ -98,9 +90,7 @@ const Navbar = ({ challenge }) => {
                 </div>
               </div>
               <div className="hidden md:block flex items-left">
-                <div className="inline-block ">
-                  {navButton}
-                </div>
+                <div className="inline-block ">{navButton}</div>
               </div>
 
               <div className="mr-2 flex md:hidden">
@@ -168,6 +158,7 @@ const Navbar = ({ challenge }) => {
                 <NavLink
                   exact
                   to="/"
+                  onClick={() => setNavbarOpen(!navbarOpen)}
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                 >
@@ -176,21 +167,17 @@ const Navbar = ({ challenge }) => {
                 <NavLink
                   exact
                   to="/team"
+                  onClick={() => setNavbarOpen(!navbarOpen)}
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                 >
                   Team
                 </NavLink>
-                {/* <NavLink
-                  exact
-                  to="/projects"
-                  className="text-gray-300 hover:bg-gray-700 bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Projects
-            </NavLink> */}
+
                 <NavLink
                   exact
                   to="/guidelines"
+                  onClick={() => setNavbarOpen(!navbarOpen)}
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                 >
@@ -204,12 +191,10 @@ const Navbar = ({ challenge }) => {
       </div>
     </>
   );
-}
+};
 
 const mapStateToProps = createStructuredSelector({
-  challenge: selectChallengeData
+  challenge: selectChallengeData,
 });
 
-
-
-export default connect(mapStateToProps)(Navbar)
+export default connect(mapStateToProps)(Navbar);
