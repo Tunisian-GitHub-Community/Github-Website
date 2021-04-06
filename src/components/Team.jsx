@@ -1,5 +1,5 @@
-import React from 'react'
-/* the component to show our Team  This Component Exist in "TeamPage" Page.*/
+import React from 'react';
+/* the component to show our Team  This Component Exist in "TeamPage" Page. */
 function Team({ teams }) {
   console.log(teams[0]);
   return (
@@ -11,8 +11,8 @@ function Team({ teams }) {
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Passionate Students united by Code.</p>
           </div>
           <div className="flex flex-wrap -m-2">
-            {teams.map((team, i) => {
-              return (< div key={i} className="p-2 lg:w-1/3 md:w-1/2 w-full"  >
+            {teams.map((team, i) => (
+              <div key={i} className="p-2 lg:w-1/3 md:w-1/2 w-full">
                 <div className="h-full flex items-center border-gray-800 border p-4 rounded-lg">
                   <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={team.img} />
                   <div className="flex-grow">
@@ -21,12 +21,13 @@ function Team({ teams }) {
                     <a className="text-indigo-600" href={team}>  Github </a>
                   </div>
                 </div>
-              </div>);
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
-    </div>)
+    </div>
+  );
 }
 
-export default Team
+export default Team;

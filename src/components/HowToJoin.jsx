@@ -1,4 +1,6 @@
-/* the component to show instructions on how to join us,  This Component Exist in "TeamPage" Page.*/
+import React from 'react';
+
+/* the component to show instructions on how to join us,  This Component Exist in "TeamPage" Page. */
 function HowToJoin() {
   return (
     <div>
@@ -9,7 +11,8 @@ function HowToJoin() {
               Private Community
             </h2>
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-300">
-              How to join us ?{" "}
+              How to join us ?
+              {' '}
             </h1>
           </div>
           <div className="flex flex-wrap -m-4">
@@ -70,7 +73,8 @@ function HowToJoin() {
                 <div className="flex-grow">
                   <p className="leading-relaxed text-gray-400 text-base">
                     joining our weekly Talks is optional yet presenting your
-                    monthly project is required.{" "}
+                    monthly project is required.
+                    {' '}
                   </p>
                 </div>
               </div>
@@ -107,7 +111,7 @@ function HowToJoin() {
                     className="mt-3 text-indigo-600 inline-flex items-center hover:text-gray-200 "
                     href="/guidelines"
                   >
-                    {" "}
+                    {' '}
                     Learn more
                     <svg
                       fill="none"

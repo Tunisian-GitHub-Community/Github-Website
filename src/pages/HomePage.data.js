@@ -1,3 +1,5 @@
+import React from 'react';
+
 const cardsData = [
   {
     icon: (
@@ -16,11 +18,11 @@ const cardsData = [
         </svg>
       </svg>
     ),
-    title: "Weekly Talks",
+    title: 'Weekly Talks',
     text:
-      "We host weekly talks on our Discord Server. Debate all kinds of subjects related to the IT industry and software development, also having a special guest for every meeting, providing the chance for students to share their knowledge and hopefully answer all their questions.",
-    link: "https://discord.gg/MzXu6mM5eN",
-    LinkTitle: "Our Discord Server",
+      'We host weekly talks on our Discord Server. Debate all kinds of subjects related to the IT industry and software development, also having a special guest for every meeting, providing the chance for students to share their knowledge and hopefully answer all their questions.',
+    link: 'https://discord.gg/MzXu6mM5eN',
+    LinkTitle: 'Our Discord Server',
   },
   {
     icon: (
@@ -48,11 +50,11 @@ const cardsData = [
         </svg>
       </svg>
     ),
-    title: "Monthly Challenges",
+    title: 'Monthly Challenges',
     text:
-      "We organize monthly challenges that are open to all Students across Tunisia, with the goal of encouraging students to expand their knowledge and improve their technical skills.",
-    link: "https://github.com/Tunisian-GitHub-Community",
-    LinkTitle: "Our Discord Server",
+      'We organize monthly challenges that are open to all Students across Tunisia, with the goal of encouraging students to expand their knowledge and improve their technical skills.',
+    link: 'https://github.com/Tunisian-GitHub-Community',
+    LinkTitle: 'Our Discord Server',
   },
   {
     icon: (
@@ -78,7 +80,7 @@ const cardsData = [
         </svg>
       </svg>
     ),
-    title: "Mentoring",
+    title: 'Mentoring',
     text:
       "We've all been there! lost, confused, and burned-out. Some of us suffered from impostor syndrome. That's why we provide guidance and mentoring to our Community members on a daily basis.",
   },
@@ -99,11 +101,11 @@ const cardsData = [
         </svg>
       </svg>
     ),
-    title: "Pair Programming",
+    title: 'Pair Programming',
     text:
       "Programming is a team sport, that's why we highly encourage pair programming and advise students to work together on monthly challenges to achieve more and improve on their Soft Skills.",
-    link:"https://github.com/Tunisian-GitHub-Community/Challenge-Ideas",
-    LinkTitle:"Challenge Ideas"
+    link: 'https://github.com/Tunisian-GitHub-Community/Challenge-Ideas',
+    LinkTitle: 'Challenge Ideas',
   },
 ];
 export default cardsData;

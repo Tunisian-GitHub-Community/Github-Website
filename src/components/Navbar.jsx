@@ -60,7 +60,6 @@ const Navbar = ({ challenge }) => {
                 <div className="hidden md:block  ">
                   <div className=" mx-10 px-4 flex items-baseline">
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-
                     <NavLink
                       exact
                       to="/"
@@ -98,7 +97,7 @@ const Navbar = ({ challenge }) => {
                 <button
                   type="button"
                   className="bg-gray-800 inline-flex items-center justify-center
-                 p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 
+                 p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2
                  focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white  "
                   aria-controls="mobile-menu"
                   aria-expanded="false"
@@ -106,11 +105,10 @@ const Navbar = ({ challenge }) => {
                 >
                   <span className="sr-only">Open main menu</span>
                   {/*
-  
 
               Menu open: "hidden", Menu closed: "block"
             */}
-                  <div className={navbarOpen ? " hidden" : " block"}>
+                  <div className={navbarOpen ? ' hidden' : ' block'}>
                     <svg
                       className=" h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +125,7 @@ const Navbar = ({ challenge }) => {
                       />
                     </svg>
                   </div>
-                  <div className={navbarOpen ? " block" : "hidden"}>
+                  <div className={navbarOpen ? ' block' : 'hidden'}>
                     <svg
                       className="h-6 w-6"
                       ns="http://www.w3.org/2000/svg"
@@ -149,7 +147,7 @@ const Navbar = ({ challenge }) => {
 
             <div
               className={
-                "md:hidden  ease-in-out" + (navbarOpen ? " flex" : " hidden")
+                `md:hidden  ease-in-out${navbarOpen ? ' flex' : ' hidden'}`
               }
               id="mobile-menu"
             >
