@@ -13,8 +13,7 @@ function HomePage() {
             <ChallengeStatus />
             <Header />
             <ActiviesGrid cards={cardsData} />
-            <Meet/>
-            
+            <Meet />
         </div>
     )
 }

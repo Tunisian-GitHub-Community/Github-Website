@@ -26,7 +26,7 @@ function Guidelines() {
                     <ul >
                       <li className="py-2" >- Being respectful of differing opinions and viewpoints.
                     </li>
-                      <li className="py-2">- Using welcoming and inclusive language. </li>
+                      <li className="py-2" >- Using welcoming and inclusive language. </li>
                       <li className="py-2" >- Gracefully accepting constructive criticism.</li>
                       <li className="py-2" >- Focusing on what is best for the community. </li>
                     </ul>
@@ -76,7 +76,6 @@ function Guidelines() {
           </div>
         </section>
       </div>
-
     </div>
   )
 }
