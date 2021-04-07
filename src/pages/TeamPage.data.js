@@ -55,7 +55,7 @@ const teamData = [
 
   {
     name: 'mohamed kamel hamdouni',
-    description: '',
+    description: 'Web / Mobile Developer',
     link: 'https://github.com/medkamelhamdouni',
     img: 'https://avatars.githubusercontent.com/u/33313502?v=4',
 
