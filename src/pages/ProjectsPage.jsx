@@ -1,9 +1,11 @@
 import React from 'react';
+import Projects from '../components/Projects';
+import './Preloader.css'
 
 function ProjectsPage() {
   return (
     <div>
-      ProjectsPage
+     <Projects  />
     </div>
   );
 }

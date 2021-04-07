@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import IconToOrg from './components/IconToOrg';
 import Footer from './components/Footer';
 
+
 // chuck files and laod only what is needed
 const Teampage = lazy(() => import('./pages/TeamPage'));
 const Guidelines = lazy(() => import('./pages/Guidelines'));
@@ -29,6 +30,7 @@ function App() {
               <Route exact path="/projects" component={ProjectsPage} />
               <Route exact path="/guidelines" component={Guidelines} />
               <Route exact path="/form" component={FormPage} />
+              
               <Route path="*" component={WhereToGoPage} />
             </Switch>
             <IconToOrg />
