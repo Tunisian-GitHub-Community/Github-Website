@@ -1,9 +1,8 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 const WhereToGoPage = () => {
-  function goBack() {
-    window.history.back();
-  }
+  const history = useHistory();
   return (
 
     <section className="text-gray-600 body-font">
@@ -16,12 +15,14 @@ const WhereToGoPage = () => {
           <p className="mb-8 leading-relaxed">
             This is not the page you're looking for.
             <br />
-            {' '}
             Looks like you lost you way but don't worry we got you covered
           </p>
 
           <div className="flex justify-center">
-            <button className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg" onClick={goBack}>Go Back</button>
+            <button type="button" className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg" onClick={() => {
+              history.goBack();
+            }}
+            >Go Back</button>
             <a href="/" className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Home</a>
           </div>
         </div>

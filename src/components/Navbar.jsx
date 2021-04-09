@@ -1,13 +1,13 @@
-import { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectChallengeData } from "../redux/challenge/challenge.selector";
 
 const Navbar = ({ challenge }) => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  
-  
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+
 
   let navButton = null;
   if (challenge.isOpen) {
@@ -86,11 +86,11 @@ const Navbar = ({ challenge }) => {
                       Guidelines
                     </NavLink>
                     <NavLink
-                  exact
-                  to="/projects"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                  activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                > Projects 
+                      exact
+                      to="/projects"
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                    > Projects
                 </NavLink>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ const Navbar = ({ challenge }) => {
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                 >
-               Projects
+                  Projects
                 </NavLink>
                 {navButton}
               </div>
