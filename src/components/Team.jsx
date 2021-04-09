@@ -29,4 +29,4 @@ function Team({ teams }) {
   );
 }
 
-export default Team;
+export default React.memo(Team);

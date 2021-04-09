@@ -52,4 +52,4 @@ function ActiviesGrid({ cards }) {
   );
 }
 
-export default ActiviesGrid;
+export default React.memo(ActiviesGrid);
