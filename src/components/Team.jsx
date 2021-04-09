@@ -1,7 +1,6 @@
 import React from 'react';
 /* the component to show our Team  This Component Exist in "TeamPage" Page. */
 function Team({ teams }) {
-  console.log(teams[0]);
   return (
     <div className="team">
       <section className="text-gray-600 body-font">

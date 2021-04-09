@@ -6,7 +6,6 @@ import TeamData from './TeamPage.data';
 function TeamPage() {
   return (
     <div className="teampage ">
-
       <Team teams={TeamData} />
       <HowToJoin />
     </div>
