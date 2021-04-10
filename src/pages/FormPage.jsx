@@ -11,17 +11,13 @@ function FormPage({ challenge }) {
     script.src = 'https://embed.typeform.com/embed.js';
     script.type = 'text/javascript';
     script.async = true;
-    console.log(challenge);
-  }, [challenge]);
-  let render = <div>sorry</div>;
-  if (challenge.isOpen) render = <iframe title="challenge" id="typeform-full" width="100%" height="100%" frameBorder="0" allow="camera; microphone; autoplay; encrypted-media;" src={challenge.formLink} />;
-  if (challenge.reviewTime) render = <iframe title="challenge" id="typeform-full" width="100%" height="100%" frameBorder="0" allow="camera; microphone; autoplay; encrypted-media;" src={challenge.formLink} />;
+  }, []);
 
+  if (challenge.isOpen) return <iframe title="challenge" id="typeform-full" width="100%" height="100%" frameBorder="0" allow="camera; microphone; autoplay; encrypted-media;" src={challenge.formLink} />
+  if (challenge.reviewTime) return <iframe title="challenge" id="typeform-full" width="100%" height="100%" frameBorder="0" allow="camera; microphone; autoplay; encrypted-media;" src={challenge.formLink} />
   return (
     <div className="form">
-      {
-        render
-      }
+      <div>sorry</div>
     </div>
   );
 }
@@ -29,5 +25,4 @@ function FormPage({ challenge }) {
 const mapStateToProps = createStructuredSelector({
   challenge: selectChallengeData,
 });
-
 export default connect(mapStateToProps)(FormPage);
