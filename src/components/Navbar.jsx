@@ -6,9 +6,6 @@ import { selectChallengeData } from "../redux/challenge/challenge.selector";
 
 const Navbar = ({ challenge }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-
-
-
   let navButton = null;
   if (challenge.isOpen) {
     navButton = (
@@ -211,4 +208,4 @@ const mapStateToProps = createStructuredSelector({
   challenge: selectChallengeData,
 });
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(React.memo(Navbar));

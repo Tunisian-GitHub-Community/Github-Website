@@ -59,4 +59,5 @@ const mapStateToProps = createStructuredSelector({
   challenge: selectChallengeData,
 });
 
-export default connect(mapStateToProps)(ChallengeStatus);
+export default connect(mapStateToProps)(React.memo(ChallengeStatus));
+
