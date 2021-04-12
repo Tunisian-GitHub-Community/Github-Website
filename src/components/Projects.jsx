@@ -1,6 +1,6 @@
 import React from "react";
 
-function Projects({ projects }) {
+function Projects({ repos }) {
   return (
     <div>
       <section className="text-gray-200 body-font">
@@ -31,7 +31,7 @@ function Projects({ projects }) {
                 </tr>
               </thead>
               <tbody>
-                {projects.map((project, i) => (
+                {repos.map((project, i) => (
                   <tr key={i} className=" border border-gray-800">
                     <td className="px-4  py-3">{project.name}</td>
                     <td className="px-4 py-3">{project.description}</td>
