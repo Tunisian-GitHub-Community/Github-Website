@@ -1,6 +1,6 @@
 import OrganizationTypes from './organization.types';
 
-const setRepos = (repos) => ({
+export const setRepos = (repos) => ({
     type: OrganizationTypes.SET_REPOS,
     payload: repos
 });

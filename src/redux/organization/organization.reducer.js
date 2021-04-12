@@ -4,7 +4,7 @@ const INITIAL_STATE = {
     repos: []
 };
 
-const userReducer = (state = INITIAL_STATE, { type, payload }) => {
+const organizationReducer = (state = INITIAL_STATE, { type, payload }) => {
     switch (type) {
         case OrganizationTypes.SET_REPOS:
             return {
@@ -16,4 +16,4 @@ const userReducer = (state = INITIAL_STATE, { type, payload }) => {
     }
 };
 
-export default userReducer;
+export default organizationReducer;
