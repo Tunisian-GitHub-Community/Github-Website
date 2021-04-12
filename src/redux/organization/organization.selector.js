@@ -4,6 +4,6 @@ const selectOrganization = (state) => state.organization;
 
 export const selectReposData = createSelector(
     [selectOrganization],
-    (repos) => repos.list,
+    (repos) => repos,
 );
-export default selectChallenge;
+export default selectOrganization;
