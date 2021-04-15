@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectChallengeData } from "../redux/challenge/challenge.selector";
 
-const Navbar = ({ challenge }) => {
+export const Navbar = ({ challenge }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   let navButton = null;
   if (challenge.isOpen) {
