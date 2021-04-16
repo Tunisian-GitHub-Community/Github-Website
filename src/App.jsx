@@ -17,29 +17,23 @@ const FormPage = lazy(() => import('./pages/FormPage'));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
 const WhereToGoPage = lazy(() => import('./pages/WhereToGoPage'));
 
-function App() {
-  return (
-    <Suspense fallback={<Spinner />}>
-      <div className="App">
-        <ErrorBoundry>
-          <BrowserRouter>
-            <Navbar />
-            <Switch>
-              <Route exact path="/" component={Homepage} />
-              <Route exact path="/team" component={Teampage} />
-              <Route exact path="/projects" component={ProjectsPage} />
-              <Route exact path="/guidelines" component={Guidelines} />
-              <Route exact path="/form" component={FormPage} />
-              
-              <Route path="*" component={WhereToGoPage} />
-            </Switch>
-            <IconToOrg />
-            <Footer />
-          </BrowserRouter>
-        </ErrorBoundry>
-      </div>
-    </Suspense>
-  );
-}
+export const App = () => (
+  <Suspense fallback={<Spinner />}>
+    <ErrorBoundry>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/team" component={Teampage} />
+          <Route exact path="/projects" component={ProjectsPage} />
+          <Route exact path="/guidelines" component={Guidelines} />
+          <Route exact path="/form" component={FormPage} />
+          <Route path="*" component={WhereToGoPage} />
+        </Switch>
+        <IconToOrg />
+        <Footer />
+      </BrowserRouter>
+    </ErrorBoundry>
+  </Suspense>)
 
 export default App;

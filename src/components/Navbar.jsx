@@ -2,7 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import PropTypes from "prop-types";
 import { selectChallengeData } from "../redux/challenge/challenge.selector";
+
+
 
 export const Navbar = ({ challenge }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -38,6 +41,7 @@ export const Navbar = ({ challenge }) => {
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <img
+                  data-test="logo"
                   className="h-10 w-10"
                   src="./assets/logo.png"
                   alt="Github's Tunisian Community"
@@ -200,6 +204,21 @@ export const Navbar = ({ challenge }) => {
       </nav>
     </div>
   );
+};
+
+Navbar.propTypes = {
+  challenge: PropTypes.shape({
+    isOpen: PropTypes.bool.isRequired,
+    reviewTime: PropTypes.bool.isRequired,
+    formLink: PropTypes.string,
+  })
+};
+
+Navbar.defaultProps = {
+  challenge: {
+    isOpen: false,
+    reviewTime: false,
+  }
 };
 
 const mapStateToProps = createStructuredSelector({
