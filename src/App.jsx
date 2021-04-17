@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 
 
 export const App = () => (
-  <Suspense fallback={<Spinner />}>
+  <Suspense data-test="App" fallback={<Spinner />}>
     <ErrorBoundry>
       <BrowserRouter>
         <Navbar />
