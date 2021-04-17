@@ -2,8 +2,8 @@ import { createSelector } from 'reselect';
 
 const selectOrganization = (state) => state.organization;
 
-export const selectReposData = createSelector(
+export const selectRepos = createSelector(
     [selectOrganization],
-    (repos) => repos.list,
+    (organization) => organization.repos,
 );
-export default selectChallenge;
+export default selectOrganization;

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -5,7 +6,6 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import { store, persistor } from './redux/store';
 
@@ -23,5 +23,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
-reportWebVitals();
 serviceWorker.register();

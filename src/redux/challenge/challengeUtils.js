@@ -1,10 +1,13 @@
+require('dotenv').config()
+
+
 const getChallengeState = () => {
   const today = new Date();
   // date is between 1 and 15.
-  if (today.getDate() <= 15) return { isOpen: true, reviewTime: false, formLink: 'https://form.typeform.com/to/l8JESrOz?typeform-medium=embed-snippet' };
+  if (today.getDate() <= 15) return { isOpen: true, reviewTime: false, formLink: process.env.CHALLENGE_LINK };
 
   // date is more 25.
-  if ((today.getDate() >= 25) && (today.getDate() <= 31)) return { isOpen: false, reviewTime: true, formLink: 'https://form.typeform.com/to/sVxFigO6?typeform-medium=embed-snippet' };
+  if ((today.getDate() >= 25) && (today.getDate() <= 31)) return { isOpen: false, reviewTime: true, formLink: process.env.REVIEW_LINK };
 
   // date is between 16 and 24.
   return { isOpen: false, reviewTime: false };

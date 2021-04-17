@@ -1,8 +1,8 @@
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+/* eslint-disable import/no-named-as-default */
+import React, { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import Homepage from './pages/HomePage';
-
+import Router from "./Router";
 import ErrorBoundry from './components/ErrorBoundry';
 import Spinner from './components/Spinner';
 import Navbar from './components/Navbar';
@@ -10,36 +10,16 @@ import IconToOrg from './components/IconToOrg';
 import Footer from './components/Footer';
 
 
-// chuck files and laod only what is needed
-const Teampage = lazy(() => import('./pages/TeamPage'));
-const Guidelines = lazy(() => import('./pages/Guidelines'));
-const FormPage = lazy(() => import('./pages/FormPage'));
-const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
-const WhereToGoPage = lazy(() => import('./pages/WhereToGoPage'));
-
-function App() {
-  return (
-    <Suspense fallback={<Spinner />}>
-      <div className="App">
-        <ErrorBoundry>
-          <BrowserRouter>
-            <Navbar />
-            <Switch>
-              <Route exact path="/" component={Homepage} />
-              <Route exact path="/team" component={Teampage} />
-              <Route exact path="/projects" component={ProjectsPage} />
-              <Route exact path="/guidelines" component={Guidelines} />
-              <Route exact path="/form" component={FormPage} />
-              
-              <Route path="*" component={WhereToGoPage} />
-            </Switch>
-            <IconToOrg />
-            <Footer />
-          </BrowserRouter>
-        </ErrorBoundry>
-      </div>
-    </Suspense>
-  );
-}
+export const App = () => (
+  <Suspense data-test="App" fallback={<Spinner />}>
+    <ErrorBoundry>
+      <BrowserRouter>
+        <Navbar />
+        <Router />
+        <IconToOrg />
+        <Footer />
+      </BrowserRouter>
+    </ErrorBoundry>
+  </Suspense>)
 
 export default App;
