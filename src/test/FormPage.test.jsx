@@ -2,8 +2,8 @@
 import React from "react"
 import { shallow } from "enzyme"
 
-import { checkProps } from "../utils"
-import { FormPage } from "../../pages/FormPage"
+import { checkProps } from "./utils"
+import { FormPage } from "../pages/FormPage"
 
 const setUp = (props = {}) => {
     const component = shallow(<FormPage challenge={props} />);

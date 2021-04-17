@@ -2,7 +2,7 @@
 import React from "react"
 import { shallow } from "enzyme"
 
-import { GuidelinesPage } from "../../pages/GuidelinesPage"
+import { GuidelinesPage } from "../pages/GuidelinesPage"
 
 const setUp = (props = {}) => {
     const component = shallow(<GuidelinesPage challenge={props} />);

@@ -2,8 +2,8 @@
 import React from "react"
 import { shallow } from "enzyme"
 
-import { findByTestAtrr, checkProps } from "../utils"
-import { Navbar } from "../../components/Navbar"
+import { findByTestAtrr, checkProps } from "./utils"
+import { Navbar } from "../components/Navbar"
 
 const setUp = (props = {}) => {
     const component = shallow(<Navbar challenge={props} />);
