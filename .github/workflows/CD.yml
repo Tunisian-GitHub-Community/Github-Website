@@ -1,10 +1,10 @@
-name: CI
+name: CD
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, prod ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, prod ]
 
 jobs:
   build:
