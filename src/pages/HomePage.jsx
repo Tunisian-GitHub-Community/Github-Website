@@ -5,15 +5,14 @@ import Header from '../components/Header';
 import cardsData from './HomePage.data';
 import MeetTheTeam from '../components/MeetTheTeam';
 
-function HomePage() {
-  return (
-    <div className="HomePage ">
-      <ChallengeStatus />
-      <Header />
-      <ActiviesGrid cards={cardsData} />
-      <MeetTheTeam />
-    </div>
-  );
-}
+export const HomePage = () => (
+  <div data-test="HomePage" className="HomePage ">
+    <ChallengeStatus />
+    <Header />
+    <ActiviesGrid cards={cardsData} />
+    <MeetTheTeam />
+  </div>
+);
+
 
 export default HomePage;
