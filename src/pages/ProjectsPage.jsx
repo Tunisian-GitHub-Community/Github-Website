@@ -2,13 +2,10 @@ import React from 'react';
 import WithRepos from "../container/WithRepos";
 import Projects from '../components/Projects';
 
-function ProjectsPage() {
-
-  return (
-    <WithRepos>
-      <Projects />
-    </WithRepos>
-  );
-}
+export const ProjectsPage = () => (
+  <WithRepos data-test="ProjectsPage">
+    <Projects />
+  </WithRepos>
+);
 
 export default ProjectsPage;
