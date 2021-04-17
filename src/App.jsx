@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -12,7 +13,7 @@ import Footer from './components/Footer';
 
 // chuck files and laod only what is needed
 const Teampage = lazy(() => import('./pages/TeamPage'));
-const Guidelines = lazy(() => import('./pages/Guidelines'));
+const GuidelinesPage = lazy(() => import('./pages/GuidelinesPage'));
 const FormPage = lazy(() => import('./pages/FormPage'));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
 const WhereToGoPage = lazy(() => import('./pages/WhereToGoPage'));
@@ -26,7 +27,7 @@ export const App = () => (
           <Route exact path="/" component={Homepage} />
           <Route exact path="/team" component={Teampage} />
           <Route exact path="/projects" component={ProjectsPage} />
-          <Route exact path="/guidelines" component={Guidelines} />
+          <Route exact path="/guidelines" component={GuidelinesPage} />
           <Route exact path="/form" component={FormPage} />
           <Route path="*" component={WhereToGoPage} />
         </Switch>
