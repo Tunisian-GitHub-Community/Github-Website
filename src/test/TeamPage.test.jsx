@@ -24,7 +24,7 @@ describe("TeamPage component", () => {
         expect(wrapper.find("[data-test='TeamPage']").length).toBe(1);
     })
 
-    it('Should render members Grid without errors', () => {
+    it('Should render members team grid without errors', () => {
         const propsErr = checkProps(members, TeamData)
         expect(propsErr).toBeUndefined();
     });
