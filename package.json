@@ -36,6 +36,27 @@
     "build": "craco build",
     "test": "craco test"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ],
+    "rules": {
+      "no-unused-vars": "warn"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts?(x)"
+        ],
+        "rules": {
+          "max-len": "warn",
+          "options": {
+            "failOnError": false
+          }
+        }
+      }
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
