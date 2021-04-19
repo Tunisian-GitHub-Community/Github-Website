@@ -6,7 +6,7 @@ import TeamData from './TeamPage.data';
 
 export const TeamPage = () => (
   <div data-test="TeamPage" className="teampage ">
-    <Team teams={TeamData} />
+    <Team team={TeamData} />
     <HowToJoin />
   </div>
 );

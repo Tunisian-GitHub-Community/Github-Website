@@ -1,4 +1,3 @@
-/* eslint-disable import/no-named-as-default */
 import React, { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
