@@ -23,8 +23,8 @@
     "rules": {
         "no-unused-vars": "warn",
         "options": {
-            "failOnError": 0,
-            "emitWarning": 0
+            "failOnError": "off",
+            "emitWarning": "off"
         }
     }
 }
