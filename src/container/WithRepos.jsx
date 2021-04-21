@@ -1,11 +1,6 @@
 import React from 'react'
 import axios from "axios";
 import { useQuery } from 'react-query'
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-
-import { setRepos } from "../redux/organization/organization.actions";
-import { selectRepos } from "../redux/organization/organization.selector";
 
 import Spinner from '../components/Spinner';
 
@@ -14,10 +9,9 @@ const fetchRepos = async () => {
     return (res.data)
 }
 
-function WithRepos({ setRepos, repos, children }) {
-    const { isLoading, error } = useQuery('repoData', fetchRepos, {
+function WithRepos({ setRepos, children }) {
+    const { isLoading, error, data } = useQuery('repoData', fetchRepos, {
         staleTime: 60 * 5000 // refresh 5 minutes
-        , onSuccess: (data) => { setRepos(data) }
     });
     if (isLoading) return <Spinner />
 
@@ -25,16 +19,10 @@ function WithRepos({ setRepos, repos, children }) {
 
     return (
         <>
-            {React.cloneElement(children, { repos })}
+            {React.cloneElement(children, { repos: data })}
         </>
     )
 }
 
-const mapStateToProps = createStructuredSelector({
-    repos: selectRepos
-});
 
-const mapDispatchToProps = dispatch => ({
-    setRepos: (repos) => dispatch(setRepos(repos))
-});
-export default connect(mapStateToProps, mapDispatchToProps)(WithRepos)
+export default WithRepos
