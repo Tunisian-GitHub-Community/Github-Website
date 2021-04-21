@@ -1,16 +1,21 @@
 /* eslint-disable no-undef */
 import React from "react"
 import { shallow } from "enzyme"
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { checkProps } from "./utils"
 import { TeamPage } from "../pages/TeamPage"
 import TeamData from '../pages/TeamPage.data';
-
-
 import { Team } from '../components/Team';
 
+const queryClient = new QueryClient();
 const setUp = (props = {}) => {
-    const component = shallow(<TeamPage />);
+    const component = shallow(
+        <QueryClientProvider client={queryClient}>
+            <TeamPage />
+        </QueryClientProvider >
+
+    );
     return component;
 };
 
@@ -21,7 +26,7 @@ describe("TeamPage component", () => {
         wrapper = setUp()
     });
     it("should render without errors", () => {
-        expect(wrapper.find("[data-test='TeamPage']").length).toBe(1);
+        expect(wrapper.find(TeamPage).length).toBe(1);
     })
 
     it('Should render members team grid without errors', () => {
