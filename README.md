@@ -1,1 +1,1 @@
-  <img src="https://img.shields.io/github/workflow/status/tunisian-gitHub-community/github-website/runTestOnPR/master?style=for-the-badge">
+  <img src="https://img.shields.io/github/issues-pr-closed-raw/tunisian-github-community/github-website?style=for-the-badge">
