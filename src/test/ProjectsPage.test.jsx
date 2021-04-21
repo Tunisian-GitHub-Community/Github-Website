@@ -1,13 +1,19 @@
 /* eslint-disable no-undef */
 import React from "react"
 import { shallow } from "enzyme"
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { checkProps } from "./utils"
 import { ProjectsPage } from "../pages/ProjectsPage"
 import { Projects } from '../components/Projects';
 
+const queryClient = new QueryClient();
 const setUp = (props = {}) => {
-    const component = shallow(<ProjectsPage />);
+    const component = shallow(
+        <QueryClientProvider client={queryClient}>
+            <ProjectsPage />
+        </QueryClientProvider >
+    );
     return component;
 };
 
@@ -16,14 +22,15 @@ const repos = [{
     name: "",
     description: "",
     full_name: ""
-}]
+}];
 const projects = shallow(<Projects repos={repos} />);
+
 describe("ProjectsPage component", () => {
     beforeEach(() => {
         wrapper = setUp()
     });
     it("should render without errors", () => {
-        expect(wrapper.find("[data-test='ProjectsPage']").length).toBe(1);
+        expect(wrapper.find(ProjectsPage).length).toBe(1);
     })
 
     it('Should render project table without errors', () => {

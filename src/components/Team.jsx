@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 /* the component to show our Team  This Component Exist in "TeamPage" Page. */
-export const Team = ({ team }) => (
+export const Team = ({ team, isLoading, error }) => (
   <div className="team">
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
@@ -30,6 +30,7 @@ export const Team = ({ team }) => (
 
 Team.propTypes = {
   team: PropTypes.instanceOf(Array).isRequired,
+  isLoading: PropTypes.bool
 };
 
 
