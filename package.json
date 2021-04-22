@@ -33,8 +33,8 @@
     "dev": "env-cmd craco start",
     "build": "env-cmd craco build",
     "test": "env-cmd craco test",
-    "build-action": "craco build",
-    "test-action": "craco test"
+    "buildAction": "craco build",
+    "testAction": "craco test"
   },
   "browserslist": {
     "production": [
