@@ -4,7 +4,10 @@ import PropTypes from "prop-types";
 import Spinner from "./Spinner";
 export const Projects = ({ repos, isLoading, error }) => {
   if (error) console.log(error);
-  if (isLoading) return Spinner
+  if (isLoading) return (
+    <div className="m-32">
+      <Spinner />
+    </div>);
   return (
     <div data-test="Projects">
       <section className="text-gray-200 body-font">
@@ -36,11 +39,11 @@ export const Projects = ({ repos, isLoading, error }) => {
               <tbody>
                 {repos.map((repo, i) => (
                   <tr data-test="repo" key={i} className=" border border-gray-800">
-                    <td className="px-4 py-3">{repo.name}</td>
-                    <td className="px-4 py-3">{repo.description}</td>
+                    <td className="px-4 py-3">{repo.node.name}</td>
+                    <td className="px-4 py-3">{repo.node.description}</td>
                     <td className="w-10 text-center">
                       <a
-                        href={`https://github.com/${repo.full_name}`}
+                        href={`https://github.com/${repo.node.url}`}
                         target="_blank"
                         rel="noreferrer"
                         className="flex text-green-500  border border-green-500 mx-2 py-1 my-1 px-3  hover:bg-green-500 hover:text-white  rounded"
