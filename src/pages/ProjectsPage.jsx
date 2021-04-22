@@ -1,11 +1,13 @@
 import React from 'react';
-import WithRepos from "../container/WithRepos";
 import Projects from '../components/Projects';
+import useFetchRepos from "../hooks/organization/useFetchRepos";
 
-export const ProjectsPage = () => (
-  <WithRepos data-test="ProjectsPage">
-    <Projects />
-  </WithRepos>
-);
+export const ProjectsPage = () => {
+  const { isLoading, error, data } = useFetchRepos();
+  return (
+    <div data-test="ProjectsPage">
+      <Projects repos={data} isLoading={isLoading} error={error} />
+    </div>)
+};
 
 export default ProjectsPage;
