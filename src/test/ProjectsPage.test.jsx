@@ -19,9 +19,11 @@ const setUp = (props = {}) => {
 
 let wrapper;
 const repos = [{
-    name: "",
-    description: "",
-    full_name: ""
+    node: {
+        name: "",
+        description: "",
+        full_name: ""
+    }
 }];
 const projects = shallow(<Projects repos={repos} />);
 
