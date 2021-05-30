@@ -8,6 +8,7 @@ import { selectChallengeData } from "../redux/challenge/challenge.selector";
 export const Navbar = ({ challenge }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   let navButton = null;
+  console.log(challenge);
   if (challenge.isOpen) {
     navButton = (
       <NavLink

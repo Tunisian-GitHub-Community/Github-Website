@@ -4,11 +4,8 @@ const getChallengeState = () => {
   if (today.getDate() <= 15)
     return {
       isOpen: true,
-      reviewTime: false,
       formLink: process.env.REACT_APP_CHALLENGE_LINK,
     };
-
-  // date is between 16 and 31.
   return { isOpen: false };
 };
 
