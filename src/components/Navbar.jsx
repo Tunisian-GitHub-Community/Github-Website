@@ -5,8 +5,6 @@ import { createStructuredSelector } from "reselect";
 import PropTypes from "prop-types";
 import { selectChallengeData } from "../redux/challenge/challenge.selector";
 
-
-
 export const Navbar = ({ challenge }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   let navButton = null;
@@ -18,17 +16,6 @@ export const Navbar = ({ challenge }) => {
         className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
       >
         Join The Challenge!
-      </NavLink>
-    );
-  }
-  if (challenge.reviewTime) {
-    navButton = (
-      <NavLink
-        to="/form"
-        type="button"
-        className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-yellow-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
-      >
-        Feedback!
       </NavLink>
     );
   }
@@ -51,10 +38,10 @@ export const Navbar = ({ challenge }) => {
                 <NavLink to="/">
                   <h1 className="text-white  hover:text-white px-7 rounded-md text-base font-bold ">
                     Github's
-                    </h1>
+                  </h1>
                   <h1 className="text-white  px-3 rounded-md text-xs font-thin ">
                     Tunisian Commmunity
-                    </h1>
+                  </h1>
                 </NavLink>
               </div>
               <div className="hidden md:block  ">
@@ -67,7 +54,7 @@ export const Navbar = ({ challenge }) => {
                     activeClassName="bg-gray-900 text-white rounded-md text-sm font-medium"
                   >
                     Home
-                    </NavLink>
+                  </NavLink>
                   <NavLink
                     exact
                     to="/team"
@@ -75,7 +62,7 @@ export const Navbar = ({ challenge }) => {
                     activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                   >
                     Team
-                    </NavLink>
+                  </NavLink>
 
                   <NavLink
                     exact
@@ -84,14 +71,16 @@ export const Navbar = ({ challenge }) => {
                     activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                   >
                     Guidelines
-                    </NavLink>
+                  </NavLink>
                   <NavLink
                     exact
                     to="/projects"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
                     activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                  > Projects
-                </NavLink>
+                  >
+                    {" "}
+                    Projects
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -115,7 +104,7 @@ export const Navbar = ({ challenge }) => {
 
               Menu open: "hidden", Menu closed: "block"
             */}
-                <div className={navbarOpen ? ' hidden' : ' block'}>
+                <div className={navbarOpen ? " hidden" : " block"}>
                   <svg
                     className=" h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +121,7 @@ export const Navbar = ({ challenge }) => {
                     />
                   </svg>
                 </div>
-                <div className={navbarOpen ? ' block' : 'hidden'}>
+                <div className={navbarOpen ? " block" : "hidden"}>
                   <svg
                     className="h-6 w-6"
                     ns="http://www.w3.org/2000/svg"
@@ -153,9 +142,9 @@ export const Navbar = ({ challenge }) => {
           </div>
 
           <div
-            className={
-              `md:hidden  ease-in-out${navbarOpen ? ' flex' : ' hidden'}`
-            }
+            className={`md:hidden  ease-in-out${
+              navbarOpen ? " flex" : " hidden"
+            }`}
             id="mobile-menu"
           >
             <div className=" container px-2 pt-2 pb-3 space-y-1  sm:px-3">
@@ -168,7 +157,7 @@ export const Navbar = ({ challenge }) => {
                 activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
               >
                 Home
-                </NavLink>
+              </NavLink>
               <NavLink
                 exact
                 to="/team"
@@ -177,7 +166,7 @@ export const Navbar = ({ challenge }) => {
                 activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
               >
                 Team
-                </NavLink>
+              </NavLink>
 
               <NavLink
                 exact
@@ -187,7 +176,7 @@ export const Navbar = ({ challenge }) => {
                 activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
               >
                 Guidelines
-                </NavLink>
+              </NavLink>
               <NavLink
                 exact
                 to="/projects"
@@ -196,7 +185,7 @@ export const Navbar = ({ challenge }) => {
                 activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
               >
                 Projects
-                </NavLink>
+              </NavLink>
               {navButton}
             </div>
           </div>
@@ -209,16 +198,14 @@ export const Navbar = ({ challenge }) => {
 Navbar.propTypes = {
   challenge: PropTypes.shape({
     isOpen: PropTypes.bool.isRequired,
-    reviewTime: PropTypes.bool.isRequired,
     formLink: PropTypes.string,
-  })
+  }),
 };
 
 Navbar.defaultProps = {
   challenge: {
     isOpen: false,
-    reviewTime: false,
-  }
+  },
 };
 
 const mapStateToProps = createStructuredSelector({

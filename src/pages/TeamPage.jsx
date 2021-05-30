@@ -1,9 +1,8 @@
-import React from 'react';
-import HowToJoin from '../components/HowToJoin';
-import Team from '../components/Team';
-import TeamData from './TeamPage.data';
+import React from "react";
+import HowToJoin from "../components/HowToJoin";
+import Team from "../components/Team";
+import TeamData from "./TeamPage.data";
 import useFetchMembers from "../hooks/organization/useFetchMembers";
-
 
 export const TeamPage = () => {
   const { isLoading, error, data } = useFetchMembers();
@@ -14,6 +13,6 @@ export const TeamPage = () => {
       <HowToJoin />
     </div>
   );
-}
+};
 
 export default TeamPage;
