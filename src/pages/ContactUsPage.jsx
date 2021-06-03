@@ -1,25 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from "react";
-
-function post(path, params, names, method = "post") {
-  const form = document.createElement("form");
-  form.method = method;
-  form.action = path;
-  let i = 0;
-  for (const key in params) {
-    if (params.hasOwnProperty(key)) {
-      const hiddenField = document.createElement("input");
-      hiddenField.type = "hidden";
-      hiddenField.name = names[i];
-      hiddenField.value = params[key];
-      form.appendChild(hiddenField);
-      i++;
-    }
-  }
-
-  document.body.appendChild(form);
-  form.submit();
-}
+import { createContactData } from "../firebase";
 
 export const ContactUsPage = () => {
   const [formData, setformData] = React.useState({
@@ -30,11 +11,10 @@ export const ContactUsPage = () => {
 
   const afterSubmission = (e) => {
     e.preventDefault();
-    console.log(formData);
-    const route =
-      "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfJTZ5AHBB3y9Xmkw0EoHme8NDMgczt74Zlzg-xin0awhFYGg/formResponse";
-    const names = ["entry.1035355711", "entry.1663598263", "entry.1604566192"];
-    post(route, formData, names);
+    // const route =
+    //   "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfJTZ5AHBB3y9Xmkw0EoHme8NDMgczt74Zlzg-xin0awhFYGg/formResponse";
+    // const names = ["entry.1035355711", "entry.1663598263", "entry.1604566192"];
+    createContactData(formData);
   };
   return (
     <div className="bg-dark white:bg-gray-900">
