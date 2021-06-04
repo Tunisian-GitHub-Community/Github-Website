@@ -17,7 +17,7 @@ export const Projects = ({ repos, isLoading, error }) => {
               Our Projects
               </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base pt-6">
-              Projects contributed by our Team during monthly challenges.
+              Projects contributed by our members during monthly challenges.
               </p>
           </div>
           <div className="lg:w-2/3 w-full mx-auto overflow-auto">
