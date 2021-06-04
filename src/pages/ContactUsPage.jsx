@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from "react";
-import { createContactData } from "../firebase";
+import { useForm } from "react-hook-form";
 
 export const ContactUsPage = () => {
   const [formData, setformData] = React.useState({
@@ -8,20 +8,19 @@ export const ContactUsPage = () => {
     name: "",
     mail: "",
   });
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
-  const afterSubmission = (e) => {
-    e.preventDefault();
-    // const route =
-    //   "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfJTZ5AHBB3y9Xmkw0EoHme8NDMgczt74Zlzg-xin0awhFYGg/formResponse";
-    // const names = ["entry.1035355711", "entry.1663598263", "entry.1604566192"];
-    createContactData(formData);
-  };
   return (
     <div className="bg-dark white:bg-gray-900">
       <form
-        onSubmit={afterSubmission}
+        onSubmit={handleSubmit()}
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfJTZ5AHBB3y9Xmkw0EoHme8NDMgczt74Zlzg-xin0awhFYGg/formResponse"
         method="post"
-        class="my-20 p-10 max-w-xl mx-auto shadow-md sm:border-0 md:border md:border-gray-900 md:dark:border-gray-100 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+        className="my-20 p-10 max-w-xl mx-auto shadow-md sm:border-0 md:border md:border-gray-900 md:dark:border-gray-100 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100"
       >
         <input type="hidden" name="redirect" className="redirect" />
         <div className="mb-10">
@@ -32,63 +31,61 @@ export const ContactUsPage = () => {
           <hr className="border-gray-900 dark:border-gray-100" />
         </div>
         <div className="mb-5">
-          <label
-            for="message"
-            className="text-lg flex justify-between items-end"
-          >
+          <label className="text-lg flex justify-between items-end">
             <span>Message</span>
-            <span class="text-xs text-red-500">Required</span>
+            {errors.message && (
+              <span className="text-xs text-red-500">Required</span>
+            )}
           </label>
           <textarea
             name="entry.1035355711"
-            id="message"
             maxLength="10"
             cols="30"
             rows="10"
-            value={formData.message}
             onChange={(e) =>
               setformData({ ...formData, message: e.target.value })
             }
-            class="shadow-md mt-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"
+            {...register("message", { required: true })}
+            className="shadow-md mt-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"
           ></textarea>
         </div>
         <div className="mb-5">
-          <label for="name" className="text-lg flex justify-between items-end">
+          <label className="text-lg flex justify-between items-end">
             <span>Name</span>
-            <span class="text-xs text-red-500 ">Required</span>
+            {errors.name && <span class="text-xs text-red-500">Required</span>}
           </label>
-          <div class="mt-1 flex shadow-md">
+          <div className="mt-1 flex shadow-md">
             <span className="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100">
-              <i class="fas fa-user"></i>
+              <i className="fas fa-user"></i>
             </span>
             <input
               type="text"
               name="entry.1663598263"
-              class="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"
-              value={formData.name}
+              className="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"
               onChange={(e) =>
                 setformData({ ...formData, name: e.target.value })
               }
+              {...register("name", { required: true })}
             />
           </div>
         </div>
         <div className="mb-5">
-          <label for="email" className="text-lg flex justify-between items-end">
+          <label className="text-lg flex justify-between items-end">
             <span>Email</span>
-            <span class="text-xs text-red-500">Required</span>
+            {errors.mail && <span class="text-xs text-red-500">Required</span>}
           </label>
           <div className="mt-1 flex shadow-md">
             <span className="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100">
-              <i class="fas fa-envelope"></i>
+              <i className="fas fa-envelope"></i>
             </span>
             <input
               type="email"
               name="entry.1604566192"
               className="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"
-              value={formData.mail}
               onChange={(e) =>
                 setformData({ ...formData, mail: e.target.value })
               }
+              {...register("mail", { required: true, pattern: /\S+@\S+\.\S+/ })}
             />
           </div>
         </div>
@@ -97,7 +94,7 @@ export const ContactUsPage = () => {
             type="submit"
             className="font-medium shadow-md rounded-none p-2 w-full focus:outline-none focus:ring-2 focus:ring-offset-2 border border-gray-900 dark:border-gray-100 bg-gray-800 dark:bg-gray-200 text-gray-200 dark:text-gray-800 hover:bg-gray-900 dark:hover:bg-gray-100"
           >
-            <i class="fas fa-check"></i> Send
+            <i className="fas fa-check"></i> Send
           </button>
         </div>
       </form>
