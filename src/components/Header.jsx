@@ -20,7 +20,7 @@ function Header() {
               <a href="https://github.com/Tunisian-GitHub-Community" target="_blank" className=" py-2 px-4 rounded-lg bg-gray-900 border-2 border-transparent text-white text-md mr-4 hover:bg-gray-800" rel="noreferrer">
                 Our Github
               </a>
-              <a href="https://discord.gg/MzXu6mM5eN" target="_blank" className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-gray-900 text-gray-900 font-bold hover:border-gray-800  hover:text-gray-800 text-md" rel="noreferrer">
+              <a href="https://discord.gg/MzXu6mM5eN" target="_blank" className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-gray-900 text-gray-900 font-bold hover:border-gray-700  hover:text-gray-600 text-md" rel="noreferrer">
                 Engage
               </a>
             </div>

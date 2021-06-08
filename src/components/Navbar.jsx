@@ -11,11 +11,11 @@ export const Navbar = ({ challenge }) => {
   if (challenge.isOpen) {
     navButton = (
       <NavLink
-        to="/form"
+        to="/currentform"
         type="button"
         className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
       >
-        Join The Challenge!
+        Save your spot
       </NavLink>
     );
   }
