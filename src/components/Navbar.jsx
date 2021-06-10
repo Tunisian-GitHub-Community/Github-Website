@@ -63,15 +63,6 @@ export const Navbar = ({ challenge }) => {
                   >
                     Members
                   </NavLink>
-
-                  <NavLink
-                    exact
-                    to="/guidelines"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                    activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                  >
-                    Guidelines
-                  </NavLink>
                   <NavLink
                     exact
                     to="/projects"
