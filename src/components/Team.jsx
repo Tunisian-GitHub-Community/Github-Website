@@ -40,7 +40,7 @@ export const Team = ({ team, isLoading, error }) => {
                       {member.name}
                     </h2>
                     <p className="text-gray-500">{member.description}</p>
-                    <a className="text-indigo-600" href={member}>
+                    <a className="text-indigo-600" href={member.link}>
                       {" "}
                       Github{" "}
                     </a>
