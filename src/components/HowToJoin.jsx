@@ -12,8 +12,9 @@ function HowToJoin({ guideLines }) {
               Private Community
             </h1>
             <h1 className="sm:text-3xl text-2xlg font-medium title-font text-gray-300">
-              How to join us ?{" "}
+              Want to join us ?
             </h1>
+            <h5> Register for the next challenge</h5>
           </div>
         </div>
       </section>

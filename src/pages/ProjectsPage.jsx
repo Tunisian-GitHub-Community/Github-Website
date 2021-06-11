@@ -1,5 +1,5 @@
-import React from 'react';
-import Projects from '../components/Projects';
+import React from "react";
+import Projects from "../components/Projects";
 import useFetchRepos from "../hooks/organization/useFetchRepos";
 
 export const ProjectsPage = () => {
@@ -7,7 +7,8 @@ export const ProjectsPage = () => {
   return (
     <div data-test="ProjectsPage">
       <Projects repos={data} isLoading={isLoading} error={error} />
-    </div>)
+    </div>
+  );
 };
 
 export default ProjectsPage;
