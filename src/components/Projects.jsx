@@ -3,10 +3,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import Spinner from "./Spinner";
 export const Projects = ({ repos, isLoading, error }) => {
-  if (error) console.log(error);
   if (isLoading)
     return (
-      <div className="m-32">
+      <div className="h-screen">
         <Spinner />
       </div>
     );
@@ -19,7 +18,7 @@ export const Projects = ({ repos, isLoading, error }) => {
               Our Projects
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base pt-6">
-              Projects contributed by our members during monthly challenges.
+              Contributed by members during the monthly challenges.
             </p>
           </div>
           <div className="lg:w-2/3 w-full mx-auto overflow-auto">

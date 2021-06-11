@@ -21,7 +21,7 @@ export const Navbar = ({ challenge }) => {
   }
 
   return (
-    <div data-test="Navbar" className="navbar">
+    <div data-test="Navbar" className="navbar sticky top-0 z-50">
       <nav className="bg-gray-800">
         <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
