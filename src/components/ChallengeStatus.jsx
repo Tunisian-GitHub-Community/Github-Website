@@ -48,7 +48,7 @@ const ChallengeStatus = ({ challenge }) => {
                   <NavLink
                     to="/form"
                     type="button"
-                    className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-gray-800 hover:bg-white hover:text-green-800 hover:shadow-lg"
+                    className="focus:outline-none text-white text-sm py-2.5 px-3 rounded-md bg-gray-800 hover:bg-white hover:text-green-800 hover:shadow-lg"
                   >
                     Join
                   </NavLink>

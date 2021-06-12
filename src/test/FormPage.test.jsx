@@ -12,8 +12,7 @@ const setUp = (props = {}) => {
 
 const props = {
   isOpen: true,
-  formLink:
-    "https://form.typeform.com/to/l8JESrOz?typeform-medium=embed-snippet",
+  formLink: "https://form.typeform.com/",
 };
 let wrapper;
 describe("FormPage component", () => {
