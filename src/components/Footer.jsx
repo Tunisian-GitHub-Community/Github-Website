@@ -24,10 +24,10 @@ export const Footer = () => (
 
       <div className="flex items-center justify-center flex-wrap">
         <a
-          href="https://www.facebook.com/groups/githubscommunity"
+          href="https://www.facebook.com/GitHubTunisia"
           target="_blank"
           rel="noreferrer"
-          className="text-gray-400 hover:text-white transition-colors px-10 duration-200"
+          className="m-1 text-gray-400 hover:text-white transition-colors px-10 duration-200"
         >
           <svg
             width={20}
@@ -44,7 +44,7 @@ export const Footer = () => (
           href="https://github.com/Tunisian-GitHub-Community"
           target="_blank"
           rel="noreferrer"
-          className="text-gray-400 hover:text-white transition-colors px-10 duration-200"
+          className="m-1 text-gray-400 hover:text-white transition-colors px-10 duration-200"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ export const Footer = () => (
           href="https://www.linkedin.com/company/githubstunisian-community/?viewAsMember=true"
           target="_blank"
           rel="noreferrer"
-          className="text-gray-400 hover:text-white transition-colors px-10 duration-200"
+          className="m-1 text-gray-400 hover:text-white transition-colors px-10 duration-200"
         >
           <svg
             width={20}

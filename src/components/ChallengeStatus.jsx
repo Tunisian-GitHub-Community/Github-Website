@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
 
 import { selectChallengeData } from "../redux/challenge/challenge.selector";
@@ -10,11 +11,11 @@ const ChallengeStatus = ({ challenge }) => {
   };
 
   const status = {
-    text: "This month's registration is closed.",
+    text: "This month's challenge is closed.",
     color: "bg-red-600",
   };
   if (challenge.isOpen) {
-    status.text = "This month's registration is open.";
+    status.text = "This month's challenge is open.";
     status.color = "bg-green-600";
   }
 
@@ -42,7 +43,16 @@ const ChallengeStatus = ({ challenge }) => {
                 </svg>
               </span>
               <p className="ml-3 font-medium text-white truncate">
-                <span className="md:inline">{status.text}</span>
+                <span className="md:inline mr-1">{status.text}</span>
+                {challenge.isOpen ? (
+                  <NavLink
+                    to="/form"
+                    type="button"
+                    className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-gray-800 hover:bg-white hover:text-green-800 hover:shadow-lg"
+                  >
+                    Join
+                  </NavLink>
+                ) : null}
               </p>
             </div>
 
