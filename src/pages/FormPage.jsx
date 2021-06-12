@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import { selectChallengeData } from "../redux/challenge/challenge.selector";
 
-export const FormPage = ({ challenge }) => {
+export const FormPage = ({ challenge, history }) => {
   React.useEffect(() => {
     // adding typeform's javascript to index
     const script = document.createElement("script");
@@ -13,7 +13,7 @@ export const FormPage = ({ challenge }) => {
     script.type = "text/javascript";
     script.async = true;
   }, []);
-
+  if (!challenge.isOpen) history.push("/404");
   if (challenge.isOpen)
     return (
       <iframe
