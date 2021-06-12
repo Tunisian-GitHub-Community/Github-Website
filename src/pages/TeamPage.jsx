@@ -2,8 +2,8 @@ import React from "react";
 import HowToJoin from "../components/HowToJoin";
 import Team from "../components/Team";
 
-import TeamData from "./TeamPage.data";
-import guideLines from "./guideLines.data";
+import teamData from "./data/TeamPage.data";
+import guideLines from "./data/guideLines.data";
 
 import useFetchMembers from "../hooks/organization/useFetchMembers";
 
@@ -12,7 +12,7 @@ export const TeamPage = () => {
   // not passing data to components, it's fetching public members only
   return (
     <div data-test="TeamPage" className="teampage ">
-      <Team team={TeamData} isLoading={isLoading} error={error} />
+      <Team team={teamData} isLoading={isLoading} error={error} />
       <HowToJoin guideLines={guideLines} />
     </div>
   );

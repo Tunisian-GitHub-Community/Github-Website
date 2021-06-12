@@ -73,6 +73,14 @@ export const Navbar = ({ challenge }) => {
                   </NavLink>
                   <NavLink
                     exact
+                    to="/timeline"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                    activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                  >
+                    Timeline
+                  </NavLink>
+                  <NavLink
+                    exact
                     to="/contactus"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
                     activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
@@ -173,6 +181,15 @@ export const Navbar = ({ challenge }) => {
                 activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
               >
                 Projects
+              </NavLink>
+              <NavLink
+                exact
+                to="/timeline"
+                onClick={() => setNavbarOpen(!navbarOpen)}
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+              >
+                Timeline
               </NavLink>
               <NavLink
                 exact

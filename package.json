@@ -26,6 +26,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-spinkit": "^3.0.0",
+    "react-timeago": "^6.2.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
