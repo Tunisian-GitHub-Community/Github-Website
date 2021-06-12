@@ -22,7 +22,7 @@ function Header() {
               <a
                 href="https://discord.gg/MzXu6mM5eN"
                 target="_blank"
-                className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-gray-900 text-gray-900 font-bold hover:border-gray-700  hover:text-gray-600 text-md"
+                className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-gray-900 text-gray-900 font-bold hover:border-gray-300  hover:text-gray-300 text-md"
                 rel="noreferrer"
               >
                 Check our discord
