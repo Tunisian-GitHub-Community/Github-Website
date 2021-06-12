@@ -21,7 +21,7 @@ ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
-        <App />
+        <App className="w-full h-full" />
       </Provider>
     </QueryClientProvider>
   </React.StrictMode>,

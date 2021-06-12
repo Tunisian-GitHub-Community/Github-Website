@@ -1,3 +1,6 @@
+import firebase from "firebase/app";
+import "firebase/firestore";
+
 let firebaseConfig = {
   apiKey: process.env.REACT_APP_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -8,9 +11,21 @@ let firebaseConfig = {
   appId: process.env.REACT_APP_ID,
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
-initializeApp(firebaseConfig);
 
+firebase.initializeApp(firebaseConfig);
 export const db = firebase.firestore();
+
+export const getTimeline = async () => {
+  try {
+    const ref = db.doc("data/timeline");
+    const snapShot = await ref.get();
+    if (snapShot.exists) return snapShot.data();
+
+    throw new Error("Couldn't fetch timeline from the database");
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 export const createContactData = async (data) => {
   const contactRef = db.doc(`/contact`);

@@ -1,8 +1,16 @@
 import React from "react";
 import TimeAgo from "react-timeago";
-import timelineData from "./data/TimeLinePage.data";
+
+import useGetTimeline from "../hooks/db/useGetTimeline";
+
+import Spinner from "../components/Spinner";
 
 function TimeLinePage() {
+  const { data, isLoading } = useGetTimeline();
+
+  if (isLoading) return <Spinner />;
+
+  let timelineData = [...data.events];
   let style;
   return (
     <div className="container mb-3 mx-auto ">
@@ -11,7 +19,7 @@ function TimeLinePage() {
           className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
           style={{ left: "50%" }}
         ></div>
-        {timelineData.map((event, i) => {
+        {timelineData.reverse().map((event, i) => {
           style =
             i % 2 == 0
               ? "mb-8 flex justify-between items-center w-full right-timeline"
