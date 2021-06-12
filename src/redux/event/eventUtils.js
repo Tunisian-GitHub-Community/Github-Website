@@ -1,6 +1,6 @@
 const getEventState = () => {
   return {
-    isOpen: true,
+    isOpen: false,
     formLink: process.env.REACT_APP_EVENT_LINK,
   };
 };

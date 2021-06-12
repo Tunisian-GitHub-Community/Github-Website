@@ -23,7 +23,6 @@ export const FormPage = ({ challenge }) => {
         width="100%"
         height="100%"
         frameBorder="0"
-        allow="camera; microphone; autoplay; encrypted-media;"
         src={challenge.formLink}
       />
     );
