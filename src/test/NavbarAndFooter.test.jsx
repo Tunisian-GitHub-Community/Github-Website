@@ -1,16 +1,20 @@
 /* eslint-disable no-undef */
 import React from "react"
 import { shallow } from "enzyme"
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import { findByTestAtrr, checkProps } from "./utils"
 import { Navbar } from "../components/Navbar"
 import { Footer } from "../components/Footer"
 
-const props = { isOpen: true, reviewTime: false, formLink: 'https://form.typeform.com/to/l8JESrOz?typeform-medium=embed-snippet' }
+const queryClient = new QueryClient();
+
 let wrapper;
 describe("Navbar component", () => {
     beforeEach(() => {
-        wrapper = shallow(<Navbar challenge={props} />);
+        wrapper = shallow( <QueryClientProvider client={queryClient}>
+            <Navbar />
+          </QueryClientProvider>>);
     });
     it("should render without errors", () => {
         expect(wrapper.find("[data-test='Navbar']").length).toBe(1);

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const Spinball = require('react-spinkit');
+const Spinball = require("react-spinkit");
 
 function Spinner() {
   return (
-    <div className="Spinner">
-      <Spinball name="ball-clip-rotate-multiple" color="white" />
+    <div className="Spinner" style={{ height: "75%" }}>
+      <Spinball name="ball-clip-rotate-multiple " color="white" />
     </div>
   );
 }

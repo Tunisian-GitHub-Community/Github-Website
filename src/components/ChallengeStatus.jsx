@@ -1,20 +1,20 @@
 import React from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import { NavLink } from "react-router-dom";
 
-import { selectChallengeData } from "../redux/challenge/challenge.selector";
+import useGetChallenge from "../hooks/db/useGetChallenge";
 
-const ChallengeStatus = ({ challenge }) => {
+const ChallengeStatus = () => {
   const hide = () => {
     document.getElementById("hide").style.display = "none";
   };
 
+  const { data = false } = useGetChallenge();
   const status = {
-    text: "This month's registration is closed.",
+    text: "This month's challenge is closed.",
     color: "bg-red-600",
   };
-  if (challenge.isOpen) {
-    status.text = "This month's registration is open.";
+  if (data.open) {
+    status.text = "This month's challenge is open.";
     status.color = "bg-green-600";
   }
 
@@ -42,7 +42,16 @@ const ChallengeStatus = ({ challenge }) => {
                 </svg>
               </span>
               <p className="ml-3 font-medium text-white truncate">
-                <span className="md:inline">{status.text}</span>
+                <span className="md:inline mr-1">{status.text}</span>
+                {data.open ? (
+                  <NavLink
+                    to="/challenge"
+                    type="button"
+                    className="focus:outline-none text-white text-sm py-2.5 px-3 rounded-md bg-gray-800 hover:bg-white hover:text-green-800 hover:shadow-lg"
+                  >
+                    Join
+                  </NavLink>
+                ) : null}
               </p>
             </div>
 
@@ -77,8 +86,4 @@ const ChallengeStatus = ({ challenge }) => {
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  challenge: selectChallengeData,
-});
-
-export default connect(mapStateToProps)(React.memo(ChallengeStatus));
+export default React.memo(ChallengeStatus);

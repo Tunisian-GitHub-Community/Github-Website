@@ -1,33 +1,33 @@
-import React from 'react';
+import React from "react";
 
 export const Footer = () => (
-  <footer data-test="Footer" className="text-gray-600  bg-gray-800 body-font">
-    <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-      <div className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+  <footer data-test="Footer" className="text-gray-600 bg-gray-800 body-font">
+    <div className="container px-5 py-4 flex justify-around items-center w-full">
+      <div className="title-font font-medium text-gray-900 flex items-center justify-center flex-wrap">
         <img
           className="h-10 w-10"
           src="./assets/logo.png"
           alt="Github's Tunisian Community"
         />
+        <div className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          © 2021 Github —
+          <a
+            href="https://github.com/Tunisian-GitHub-Community"
+            className="text-gray-600 ml-1"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Tunisian Community
+          </a>
+        </div>
       </div>
-      <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-        © 2021 Github —
-            <a
-          href="https://github.com/Tunisian-GitHub-Community"
-          className="text-gray-600 ml-1"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Tunisian Community
-            </a>
-      </p>
 
-      <div className="pt-8 flex max-w-xs mx-auto items-center justify-between">
+      <div className="flex items-center justify-center flex-wrap">
         <a
-          href="https://www.facebook.com/groups/githubscommunity"
+          href="https://www.facebook.com/GitHubTunisia"
           target="_blank"
           rel="noreferrer"
-          className="text-gray-400 hover:text-white transition-colors px-10 duration-200"
+          className="m-1 text-gray-400 hover:text-white transition-colors px-10 duration-200"
         >
           <svg
             width={20}
@@ -44,7 +44,7 @@ export const Footer = () => (
           href="https://github.com/Tunisian-GitHub-Community"
           target="_blank"
           rel="noreferrer"
-          className="text-gray-400 hover:text-white transition-colors px-10 duration-200"
+          className="m-1 text-gray-400 hover:text-white transition-colors px-10 duration-200"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ export const Footer = () => (
           href="https://www.linkedin.com/company/githubstunisian-community/?viewAsMember=true"
           target="_blank"
           rel="noreferrer"
-          className="text-gray-400 hover:text-white transition-colors px-10 duration-200"
+          className="m-1 text-gray-400 hover:text-white transition-colors px-10 duration-200"
         >
           <svg
             width={20}

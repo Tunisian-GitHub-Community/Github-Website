@@ -1,3 +1,6 @@
+import firebase from "firebase/app";
+import "firebase/firestore";
+
 let firebaseConfig = {
   apiKey: process.env.REACT_APP_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -8,22 +11,52 @@ let firebaseConfig = {
   appId: process.env.REACT_APP_ID,
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
-initializeApp(firebaseConfig);
 
+firebase.initializeApp(firebaseConfig);
 export const db = firebase.firestore();
 
-export const createContactData = async (data) => {
-  const contactRef = db.doc(`/contact`);
-  const { name, mail, message } = data;
-  console.log(Date.now());
-  const createAt = new Date();
+export const getTimeline = async () => {
   try {
+    const ref = db.doc("data/timeline");
+    const snapShot = await ref.get();
+    if (snapShot.exists) return snapShot.data();
+
+    throw new Error("Couldn't fetch timeline from the database");
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const getChallenge = async () => {
+  try {
+    const ref = db.doc("data/challenge");
+    const snapShot = await ref.get();
+    if (snapShot.exists) return snapShot.data();
+
+    throw new Error("Couldn't fetch challenge from the database");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getEvent = async () => {
+  try {
+    const ref = db.doc("data/event");
+    const snapShot = await ref.get();
+    if (snapShot.exists) return snapShot.data();
+
+    throw new Error("Couldn't fetch event from the database");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const postContactData = async (data) => {
+  try {
+    const createdAt = new Date();
+    const contactRef = db.collection(`contact`).doc(Date.now().toString());
     await contactRef.set({
-      id: Date.now(),
-      message,
-      name,
-      mail,
-      createAt,
+      ...data,
+      createdAt,
     });
   } catch (err) {
     console.error(err);

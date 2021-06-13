@@ -1,12 +1,20 @@
 import React from "react";
 
-export const CurrentForm = () => {
+import useGetEvent from "../hooks/db/useGetEvent";
+
+export const CurrentForm = ({ event, history }) => {
+  const { data = false } = useGetEvent();
+
   React.useEffect(() => {
     // adding typeform's javascript to index
     const script = document.createElement("script");
     script.src = "https://embed.typeform.com/embed.js";
     script.type = "text/javascript";
     script.async = true;
+    if (!data.open) history.push("/404");
+    return () => {
+      script.remove();
+    };
   }, []);
   return (
     <iframe
@@ -16,10 +24,9 @@ export const CurrentForm = () => {
       width="100%"
       height="100%"
       frameBorder="0"
-      allow="camera; microphone; autoplay; encrypted-media;"
-      src="https://form.typeform.com/to/sVxFigO6?typeform-medium=embed-snippet"
+      src={data.link}
     />
   );
 };
 
-export default CurrentForm;
+export default React.memo(CurrentForm);

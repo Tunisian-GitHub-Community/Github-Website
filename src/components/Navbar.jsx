@@ -1,27 +1,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import PropTypes from "prop-types";
-import { selectChallengeData } from "../redux/challenge/challenge.selector";
 
-export const Navbar = ({ challenge }) => {
+import useGetEvent from "../hooks/db/useGetEvent";
+
+export const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+  const { data = false } = useGetEvent();
+
   let navButton = null;
-  if (challenge.isOpen) {
+  if (data.open) {
     navButton = (
       <NavLink
         to="/currentform"
         type="button"
         className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
       >
-        Save your spot
+        {data.name}
       </NavLink>
     );
   }
 
   return (
-    <div data-test="Navbar" className="navbar">
+    <div data-test="Navbar" className="navbar sticky top-0 z-50">
       <nav className="bg-gray-800">
         <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -63,15 +64,6 @@ export const Navbar = ({ challenge }) => {
                   >
                     Members
                   </NavLink>
-
-                  <NavLink
-                    exact
-                    to="/guidelines"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                    activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                  >
-                    Guidelines
-                  </NavLink>
                   <NavLink
                     exact
                     to="/projects"
@@ -79,6 +71,14 @@ export const Navbar = ({ challenge }) => {
                     activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                   >
                     Projects
+                  </NavLink>
+                  <NavLink
+                    exact
+                    to="/timeline"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                    activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                  >
+                    Timeline
                   </NavLink>
                   <NavLink
                     exact
@@ -185,6 +185,15 @@ export const Navbar = ({ challenge }) => {
               </NavLink>
               <NavLink
                 exact
+                to="/timeline"
+                onClick={() => setNavbarOpen(!navbarOpen)}
+                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+              >
+                Timeline
+              </NavLink>
+              <NavLink
+                exact
                 to="/contactus"
                 onClick={() => setNavbarOpen(!navbarOpen)}
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
@@ -201,21 +210,4 @@ export const Navbar = ({ challenge }) => {
   );
 };
 
-Navbar.propTypes = {
-  challenge: PropTypes.shape({
-    isOpen: PropTypes.bool.isRequired,
-    formLink: PropTypes.string,
-  }),
-};
-
-Navbar.defaultProps = {
-  challenge: {
-    isOpen: false,
-  },
-};
-
-const mapStateToProps = createStructuredSelector({
-  challenge: selectChallengeData,
-});
-
-export default connect(mapStateToProps)(React.memo(Navbar));
+export default React.memo(Navbar);
