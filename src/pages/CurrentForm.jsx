@@ -11,8 +11,10 @@ export const CurrentForm = ({ event, history }) => {
     script.src = "https://embed.typeform.com/embed.js";
     script.type = "text/javascript";
     script.async = true;
-
     if (!event.isOpen) history.push("/404");
+    return () => {
+      script.remove();
+    };
   }, []);
   return (
     <iframe

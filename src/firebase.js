@@ -26,19 +26,37 @@ export const getTimeline = async () => {
     console.log(err);
   }
 };
-
-export const createContactData = async (data) => {
-  const contactRef = db.doc(`/contact`);
-  const { name, mail, message } = data;
-  console.log(Date.now());
-  const createAt = new Date();
+export const getChallenge = async () => {
   try {
+    const ref = db.doc("data/challenge");
+    const snapShot = await ref.get();
+    if (snapShot.exists) return snapShot.data();
+
+    throw new Error("Couldn't fetch challenge from the database");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getEvent = async () => {
+  try {
+    const ref = db.doc("data/event");
+    const snapShot = await ref.get();
+    if (snapShot.exists) return snapShot.data();
+
+    throw new Error("Couldn't fetch event from the database");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const postContactData = async (data) => {
+  try {
+    const createdAt = new Date();
+    const contactRef = db.collection(`contact`).doc(Date.now().toString());
     await contactRef.set({
-      id: Date.now(),
-      message,
-      name,
-      mail,
-      createAt,
+      ...data,
+      createdAt,
     });
   } catch (err) {
     console.error(err);

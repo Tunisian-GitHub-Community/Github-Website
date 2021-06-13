@@ -1,20 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { createStructuredSelector } from "reselect";
 
-import { selectChallengeData } from "../redux/challenge/challenge.selector";
+import useGetChallenge from "../hooks/db/useGetChallenge";
 
-const ChallengeStatus = ({ challenge }) => {
+const ChallengeStatus = () => {
   const hide = () => {
     document.getElementById("hide").style.display = "none";
   };
 
+  const { data = false } = useGetChallenge();
   const status = {
     text: "This month's challenge is closed.",
     color: "bg-red-600",
   };
-  if (challenge.isOpen) {
+  if (data.open) {
     status.text = "This month's challenge is open.";
     status.color = "bg-green-600";
   }
@@ -44,7 +43,7 @@ const ChallengeStatus = ({ challenge }) => {
               </span>
               <p className="ml-3 font-medium text-white truncate">
                 <span className="md:inline mr-1">{status.text}</span>
-                {challenge.isOpen ? (
+                {data.open ? (
                   <NavLink
                     to="/form"
                     type="button"
@@ -87,8 +86,4 @@ const ChallengeStatus = ({ challenge }) => {
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  challenge: selectChallengeData,
-});
-
-export default connect(mapStateToProps)(React.memo(ChallengeStatus));
+export default React.memo(ChallengeStatus);
