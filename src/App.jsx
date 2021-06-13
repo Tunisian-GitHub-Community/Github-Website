@@ -1,13 +1,12 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React, { Suspense } from "react";
+import { BrowserRouter } from "react-router-dom";
 
 import Router from "./Router";
-import ErrorBoundry from './components/ErrorBoundry';
-import Spinner from './components/Spinner';
-import Navbar from './components/Navbar';
-import IconToOrg from './components/IconToOrg';
-import Footer from './components/Footer';
-
+import ErrorBoundry from "./components/ErrorBoundry";
+import Spinner from "./components/Spinner";
+import Navbar from "./components/Navbar";
+import IconToOrg from "./components/IconToOrg";
+import Footer from "./components/Footer";
 
 export const App = () => (
   <Suspense data-test="App" fallback={<Spinner />}>
@@ -19,6 +18,7 @@ export const App = () => (
         <Footer />
       </BrowserRouter>
     </ErrorBoundry>
-  </Suspense>)
+  </Suspense>
+);
 
 export default App;

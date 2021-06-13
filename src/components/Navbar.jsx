@@ -1,21 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import PropTypes from "prop-types";
-import { selectEventData } from "../redux/event/event.selector";
 
-export const Navbar = ({ event }) => {
+import useGetEvent from "../hooks/db/useGetEvent";
+
+export const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+  const { data = false } = useGetEvent();
+
   let navButton = null;
-  if (event.isOpen) {
+  if (data.open) {
     navButton = (
       <NavLink
         to="/currentform"
         type="button"
         className="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-600 hover:bg-white hover:text-gray-800 hover:shadow-lg flex items-center"
       >
-        Registration
+        {data.name}
       </NavLink>
     );
   }
@@ -209,21 +210,4 @@ export const Navbar = ({ event }) => {
   );
 };
 
-Navbar.propTypes = {
-  event: PropTypes.shape({
-    isOpen: PropTypes.bool.isRequired,
-    formLink: PropTypes.string,
-  }),
-};
-
-Navbar.defaultProps = {
-  event: {
-    isOpen: false,
-  },
-};
-
-const mapStateToProps = createStructuredSelector({
-  event: selectEventData,
-});
-
-export default connect(mapStateToProps)(React.memo(Navbar));
+export default React.memo(Navbar);

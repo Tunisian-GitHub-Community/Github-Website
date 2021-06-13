@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const WhereToGoPage = ({ history }) => {
   return (
-    <section className="text-gray-600 body-font w-100">
+    <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-24 justify-center items-center">
         <div className="flex flex-col md:items-start md:text-left items-center text-center">
           <h1 className=" sm:text-9xl text-7xl mb-4 font-mono text-gray-200">
@@ -14,7 +14,7 @@ const WhereToGoPage = ({ history }) => {
             <br />
             Looks like you lost your way.
           </p>
-
+          <br />
           <div className="flex justify-center">
             <button
               type="button"
@@ -32,6 +32,7 @@ const WhereToGoPage = ({ history }) => {
           </div>
         </div>
       </div>
+      <br />
     </section>
   );
 };

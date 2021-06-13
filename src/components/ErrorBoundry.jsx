@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 export default class ErrorBoundry extends Component {
   constructor(props) {
     super(props);
@@ -28,12 +27,14 @@ export default class ErrorBoundry extends Component {
                   <h1 className="font-black uppercase text-3xl lg:text-5xl text-gradient bg-gradient-to-r from-blue-500 to-blue-600 mb-10 ">
                     Ouups !
                   </h1>
-                  <p> Something Wrong Happened! </p>
+                  <p className="font-medium text-lg mb-5">
+                    Something Wrong Happened!
+                  </p>
                 </div>
                 <div className="mb-20 md:mb-0">
                   <a
                     className="py-2 px-4 bg-blue-600 text-gray-50 font-semibold border border-blue-600 rounded-lg   hover:text-blue-600 hover:bg-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
-                    href="https://githubtunisia.tech"
+                    href="/"
                   >
                     go back
                   </a>

@@ -1,5 +1,6 @@
 import React from "react";
 
+import Spinner from "../components/Spinner";
 import useGetChallenge from "../hooks/db/useGetChallenge";
 
 export const FormPage = ({ history }) => {
@@ -10,12 +11,12 @@ export const FormPage = ({ history }) => {
     script.src = "https://embed.typeform.com/embed.js";
     script.type = "text/javascript";
     script.async = true;
+    if (!data.open) history.push("/404");
     return () => {
       script.remove();
     };
   }, []);
   if (isLoading) return <Spinner />;
-  if (!data.open) history.push("/404");
   if (data.open)
     return (
       <iframe

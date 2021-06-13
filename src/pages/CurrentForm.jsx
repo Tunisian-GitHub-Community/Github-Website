@@ -1,17 +1,17 @@
 import React from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
 
-import { selectEventData } from "../redux/event/event.selector";
+import useGetEvent from "../hooks/db/useGetEvent";
 
 export const CurrentForm = ({ event, history }) => {
+  const { data = false } = useGetEvent();
+
   React.useEffect(() => {
     // adding typeform's javascript to index
     const script = document.createElement("script");
     script.src = "https://embed.typeform.com/embed.js";
     script.type = "text/javascript";
     script.async = true;
-    if (!event.isOpen) history.push("/404");
+    if (!data.open) history.push("/404");
     return () => {
       script.remove();
     };
@@ -24,13 +24,9 @@ export const CurrentForm = ({ event, history }) => {
       width="100%"
       height="100%"
       frameBorder="0"
-      src="https://form.typeform.com/to/sVxFigO6?typeform-medium=embed-snippet"
+      src={data.link}
     />
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  event: selectEventData,
-});
-
-export default connect(mapStateToProps)(React.memo(CurrentForm));
+export default React.memo(CurrentForm);
