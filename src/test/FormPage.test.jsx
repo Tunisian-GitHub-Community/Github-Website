@@ -1,26 +1,20 @@
 /* eslint-disable no-undef */
 import React from "react";
 import { shallow } from "enzyme";
-
-import { checkProps } from "./utils";
-import { FormPage } from "../pages/FormPage";
+import { ChallengeForm } from "../pages/ChallengeForm";
 
 const setUp = (props = {}) => {
-  const component = shallow(<FormPage challenge={props} />);
+  const component = shallow(<ChallengeForm />);
   return component;
 };
 
-const props = {
-  isOpen: true,
-  formLink: "https://form.typeform.com/",
-};
 let wrapper;
 describe("FormPage component", () => {
   beforeEach(() => {
     wrapper = setUp(props);
   });
   it("should render without errors", () => {
-    expect(wrapper.find("[data-test='FormPage']").length).toBe(1);
+    expect(wrapper.find("[data-test='ChallengeForm']").length).toBe(1);
   });
 
   it("Should not throw a props error", () => {

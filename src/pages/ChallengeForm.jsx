@@ -3,7 +3,7 @@ import React from "react";
 import Spinner from "../components/Spinner";
 import useGetChallenge from "../hooks/db/useGetChallenge";
 
-export const FormPage = ({ history }) => {
+export const ChallengeForm = ({ history }) => {
   const { data = false, isLoading } = useGetChallenge();
   React.useEffect(() => {
     // adding typeform's javascript to index
@@ -20,7 +20,7 @@ export const FormPage = ({ history }) => {
   if (data.open)
     return (
       <iframe
-        data-test="FormPage"
+        data-test="ChallengeForm"
         title="challenge"
         id="typeform-full"
         width="100%"
@@ -31,4 +31,4 @@ export const FormPage = ({ history }) => {
     );
 };
 
-export default FormPage;
+export default ChallengeForm;

@@ -7,7 +7,7 @@ const Teampage = lazy(() => import("./pages/TeamPage"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const TimeLinePage = lazy(() => import("./pages/TimeLinePage"));
 const ContactUsPage = lazy(() => import("./pages/ContactUsPage"));
-const FormPage = lazy(() => import("./pages/FormPage"));
+const ChallengeForm = lazy(() => import("./pages/ChallengeForm"));
 
 const CurrentForm = lazy(() => import("./pages/CurrentForm"));
 const WhereToGoPage = lazy(() => import("./pages/WhereToGoPage"));
@@ -19,7 +19,7 @@ const Router = () => (
     <Route exact path="/projects" component={ProjectsPage} />
     <Route exact path="/timeline" component={TimeLinePage} />
     <Route exact path="/contactus" component={ContactUsPage} />
-    <Route exact path="/form" component={FormPage} />
+    <Route exact path="/challenge" component={ChallengeForm} />
     <Route exact path="/currentform" component={CurrentForm} />
     <Route path="*" component={WhereToGoPage} />
   </Switch>
