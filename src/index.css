@@ -18,7 +18,6 @@ body,
 .form {
   height: 100vh;
   background-color: #111827;
-  user-select: none;
 }
 
 body::-webkit-scrollbar-track {
@@ -61,4 +60,8 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   transform: scale(1.2);
+}
+
+form > * {
+  height: 100%;
 }
