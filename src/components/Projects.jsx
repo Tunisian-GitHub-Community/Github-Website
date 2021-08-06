@@ -31,9 +31,7 @@ export const Projects = ({ repos, isLoading, error }) => {
                   <th className="px-4 py-3 title-font tracking-wider font-medium text-gray-200 text-sm  bg-gray-800">
                     Description
                   </th>
-                  <th className="px-4 py-3 title-font tracking-wider font-medium text-gray-200 text-sm bg-gray-800">
-                    Link
-                  </th>
+                  <th className="px-4 py-3 title-font tracking-wider font-medium text-gray-200 text-sm bg-gray-800"></th>
                 </tr>
               </thead>
               <tbody>
