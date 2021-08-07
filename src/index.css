@@ -62,6 +62,16 @@ body::-webkit-scrollbar-thumb {
   transform: scale(1.2);
 }
 
-form > * {
-  height: 100%;
+form > div {
+  width: 100%;
+}
+
+.flying-octo {
+  position: absolute;
+  z-index: 1000;
+  width: 150px;
+  margin: auto;
+  top: 0;
+  right: 0;
+  margin-right: 8em;
 }
