@@ -1,9 +1,9 @@
 import React from "react";
-
+import Spinner from "../components/Spinner";
 import useGetEvent from "../hooks/db/useGetEvent";
 
 export const CurrentForm = ({ event, history }) => {
-  const { data = false } = useGetEvent();
+  const { data, isLoading } = useGetEvent();
 
   React.useEffect(() => {
     // adding typeform's javascript to index
@@ -11,11 +11,13 @@ export const CurrentForm = ({ event, history }) => {
     script.src = "https://embed.typeform.com/embed.js";
     script.type = "text/javascript";
     script.async = true;
-    if (!data.open) history.push("/404");
     return () => {
       script.remove();
     };
   }, []);
+
+  if (isLoading) return <Spinner />;
+  if (!data.open) history.push("/404");
   return (
     <iframe
       data-test="FormPage"
