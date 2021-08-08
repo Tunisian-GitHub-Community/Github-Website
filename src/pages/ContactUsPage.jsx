@@ -104,8 +104,8 @@ export const ContactUsPage = () => {
                 type="email"
                 autoComplete="off"
                 className="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"
-                name="mail"
-                {...register("mail", {
+                name="email"
+                {...register("email", {
                   required: true,
                   pattern: /\S+@\S+\.\S+/,
                 })}

@@ -29,7 +29,7 @@ function Header() {
               </a>
             </div>
           </div>
-          <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative ">
+          <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
             <img
               src="/assets/header.png"
               alt="header"

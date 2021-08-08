@@ -1,0 +1,108 @@
+[33mcommit e50324bc8ac9d10405d24453ab7791cc53f4a749[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sat Aug 7 22:27:00 2021 +0100
+
+    next
+
+[33mcommit 66070c2e8b775fc0e96d8e358c70667e530f04c2[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sat Aug 7 20:51:40 2021 +0100
+
+    more
+
+[33mcommit be791658c0d4fd949fce110ac0411d13e4e80918[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Fri Aug 6 23:28:04 2021 +0100
+
+    so far
+
+[33mcommit 63f896a0f1dcaa97de2706491f7f00c1aee35b22[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Thu Aug 5 23:44:07 2021 +0100
+
+    more forms
+
+[33mcommit 76947302c8ae8994c2940efe37a753cba4fb82dd[m
+Merge: ce3f4a1 10fadde
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sun Aug 1 15:20:17 2021 +0100
+
+    Merge branch 'master' of https://github.com/Tunisian-GitHub-Community/OurWebsite
+
+[33mcommit ce3f4a101f2bf74b2b7560d78033bb8975e8d546[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sun Aug 1 15:14:46 2021 +0100
+
+    added hotjar
+
+[33mcommit 10fadde23e94d0fddbe06a19807900bc8130137f[m
+Author: Wassef Ben Ahmed <1.wassef911@gmail.com>
+Date:   Thu Jun 17 22:26:51 2021 +0100
+
+    Update README.md
+
+[33mcommit de4200f8a030f9f4040e5ba220c5e9691f71002f[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Mon Jun 14 00:04:36 2021 +0100
+
+    removed variable
+
+[33mcommit fe8d2ca0eeba30cd050004e8296c6053e99703a6[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sun Jun 13 23:56:33 2021 +0100
+
+    tweaked tests
+
+[33mcommit b651b888d9cee43660bd873bf37f8134cfff2038[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sun Jun 13 23:56:24 2021 +0100
+
+    removed unused dependencies
+
+[33mcommit bae3b9160b17216682b9bcac37525f4f75902db7[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sun Jun 13 23:37:58 2021 +0100
+
+    changed route name
+
+[33mcommit f2eac1527bd0ffdbcbf5cf66150d595118a78975[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sun Jun 13 23:33:40 2021 +0100
+
+    get event data from db
+
+[33mcommit 08908bc29f4ccf579b42181d1553316430acfea0[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sun Jun 13 23:09:54 2021 +0100
+
+    moved away from redux because reasons
+
+[33mcommit 97c76fd58bc0d759d64fa24cd3aa1b7b7f0f285d[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sat Jun 12 22:14:09 2021 +0100
+
+    get timeline from DB
+
+[33mcommit 5a366ef5b27014597863800d0d7b6283862c75f0[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sat Jun 12 18:39:34 2021 +0100
+
+    stop updating stuff!
+
+[33mcommit bc6407764e27516e24339a55c790910106b2e0ec[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sat Jun 12 17:59:12 2021 +0100
+
+    got test passing
+
+[33mcommit 2b8402a3c3f3d393143a4d58145ea5e949beb5c4[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sat Jun 12 17:53:39 2021 +0100
+
+    style
+
+[33mcommit 4601c703cccf87528ba2128fc6ef9ddbfa1077e6[m
+Author: wassef911 <1.wassef911@gmail.com>
+Date:   Sat Jun 12 17:52:58 2021 +0100
+
+    redirect if challenge closed
