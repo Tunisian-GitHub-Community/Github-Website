@@ -40,7 +40,7 @@ export const getChallenge = async () => {
 
 export const getEvent = async () => {
   try {
-    const ref = db.doc("dev/event");
+    const ref = db.doc("data/event");
     const snapShot = await ref.get();
     if (snapShot.exists) return snapShot.data();
 
