@@ -29,75 +29,80 @@ export const Navbar = () => {
 
             <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0">
-                    <img
-                        data-test="logo"
-                        className="h-10 w-10"
-                        src="./assets/logo.png"
-                        alt="Github's Tunisian Community"
-                    />
-                  </div>
-                  <div className="flex-shrink mx-auto items-center justify-between">
-                    <NavLink to="/">
+                <NavLink to="/" exact>
+                  <div className="flex items-center">
+
+                    <div className="flex-shrink-0">
+
+                      <img
+                          data-test="logo"
+                          className="h-10 w-10"
+                          src="./assets/logo.png"
+                          alt="Github's Tunisian Community"
+                      />
+                    </div>
+                    <div className="flex-shrink mx-auto items-center justify-between">
+
                       <h1 className="text-white  hover:text-white px-7 rounded-md text-base font-bold ">
                         Github's
                       </h1>
                       <h1 className="text-white  px-3 rounded-md text-xs font-thin ">
                         Tunisian Commmunity
                       </h1>
+
+                    </div>
+                    <div className="hidden md:block  ">
+                      <div className=" mx-10 px-4 flex items-baseline">
+
+                        <Link
+                            to="home" spy={true} smooth={false}
+                            activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                            className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+
+                        >
+                          Home
+                        </Link>
+                        <Link
+                            to="goals" spy={true} smooth={false}
+                            activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                            className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+
+                        >
+                          Goals
+                        </Link>
+                        <Link
+                            to="members" spy={true} smooth={false}
+                            activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                            className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md pointer text-sm font-medium"
+
+                        >
+                          Members
+                        </Link>
+
+
+                        <Link
+                            to="contact" spy={true} smooth={false}
+                            activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                            className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+
+                        >
+                          Contact Us
+                        </Link>
+                        <NavLink
+                            exact
+                            to="/timeline"
+                            className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                            activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                        >
+                          Events
+                        </NavLink>
+                      </div>
+                    </div>
+                  </div>
                 </NavLink>
-              </div>
-              <div className="hidden md:block  ">
-                <div className=" mx-10 px-4 flex items-baseline">
-
-                  <Link
-                      to="home" spy={true} smooth={false}
-                      activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
-                      className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-
-                  >
-                    Home
-                  </Link>
-                  <Link
-                      to="goals" spy={true} smooth={false}
-                      activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
-                      className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-
-                  >
-                    Goals
-                  </Link>
-                  <Link
-                      to="members" spy={true} smooth={false}
-                      activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
-                      className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md pointer text-sm font-medium"
-
-                  >
-                    Members
-                  </Link>
-
-                  <NavLink
-                      exact
-                      to="/timeline"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                  >
-                    Timeline
-                  </NavLink>
-                  <Link
-                      to="contact" spy={true} smooth={false}
-                      activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
-                      className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-
-                  >
-                    Contact Us
-                  </Link>
+                <div className="hidden md:block flex items-left">
+                  <div className="inline-block ">{navButton}</div>
                 </div>
-              </div>
-            </div>
-            <div className="hidden md:block flex items-left">
-              <div className="inline-block ">{navButton}</div>
-            </div>
 
             <div className="mr-2 flex md:hidden">
 
@@ -156,53 +161,51 @@ export const Navbar = () => {
             }`}
             id="mobile-menu"
           >
-            <div className=" container px-2 pt-2 pb-3 space-y-1  sm:px-3">
+            <div className=" container px-2 pt-2 pb-3 space-y-1 bg-gray-900 sm:px-3">
 
-              <NavLink
-                exact
-                to="/"
-                onClick={() => setNavbarOpen(!navbarOpen)}
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+              <Link
+                  to="home" spy={true} smooth={false}
+                  activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                  onClick={() => setNavbarOpen(!navbarOpen)}
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+
               >
                 Home
-              </NavLink>
-              <NavLink
-                exact
-                to="/members"
-                onClick={() => setNavbarOpen(!navbarOpen)}
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+              </Link>
+              <Link
+                  to="goals" spy={true} smooth={false}
+                  activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                  onClick={() => setNavbarOpen(!navbarOpen)}
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                Team
-              </NavLink>
-              <NavLink
-                exact
-                to="/projects"
-                onClick={() => setNavbarOpen(!navbarOpen)}
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                Goals
+              </Link>
+              <Link
+                  to="members" spy={true} smooth={false}
+                  activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                  onClick={() => setNavbarOpen(!navbarOpen)}
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+
               >
-                Projects
-              </NavLink>
+                Members
+              </Link>
               <NavLink
                   exact
                   to="/timeline"
                   onClick={() => setNavbarOpen(!navbarOpen)}
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-              >
-                Timeline
+              >Events
               </NavLink>
-              <NavLink
-                  exact
-                  to="/contactus"
+              <Link
+                  to="contact" spy={true} smooth={false}
+                  activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
                   onClick={() => setNavbarOpen(!navbarOpen)}
                   className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+
               >
                 Contact Us
-              </NavLink>
+              </Link>
               {navButton}
             </div>
           </div>
