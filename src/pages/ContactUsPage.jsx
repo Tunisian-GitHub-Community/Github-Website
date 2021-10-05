@@ -1,15 +1,15 @@
 /* eslint-disable react/no-array-index-key */
 import React from "react";
-import { useMutation } from "react-query";
-import { useForm } from "react-hook-form";
+import {useMutation} from "react-query";
+import {useForm} from "react-hook-form";
 
-import { postContactData } from "../firebase";
+import {postContactData} from "../firebase";
 
 export const ContactUsPage = () => {
   const [formDone, setFormDone] = React.useState(false);
   const {
     register,
-    formState: { errors },
+    formState: {errors},
     handleSubmit,
   } = useForm();
   React.useEffect(() => {
@@ -39,91 +39,63 @@ export const ContactUsPage = () => {
           <img src="./assets/done.png" alt="" />
         </div>
       ) : (
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          method="post"
-          className="my-20 p-10 max-w-xl mx-auto shadow-md sm:border-0 md:border md:border-gray-900 md:dark:border-gray-100 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100"
-        >
-          <input type="hidden" name="redirect" className="redirect" />
-          <div className="mb-10">
-            <h1 className="font-bold text-4xl mb-3">Get in touch</h1>
-            <p className="font-medium text-lg mb-5">Send us a quick message.</p>
-            <hr className="border-gray-900 dark:border-gray-100" />
-          </div>
-          <div className="mb-5">
-            <label className="text-lg flex justify-between items-end">
-              <span>Message</span>
-              {errors.message && (
-                <span className="text-xs text-red-500">Required</span>
-              )}
-            </label>
+          <section className="bg-gray-100 pt-12 pb-7 lg:pb-8 lg:pt-16 xl:pt-28">
+            <div className="container mx-auto px-5">
+              <div className="grid gap-6 lg:gap-10 xl:grid-cols-3 mb-7 lg:mb-14">
+                <div className="flex flex-col justify-between space-y-10 xl:space-y-0">
+                  <div className="space-y-2 lg:space-y-4">
+                    <h2 className="text-2xl font-black sm:text-3xl">Get in touch</h2>
+                    <p className="w-full sm:w-1/2 xl:w-80 text-gray-600 md:text-lg">Ask us anything , we're open to any
+                      collaboration and questions .</p>
 
-            <textarea
-              maxLength="50"
-              cols="30"
-              rows="10"
-              name="message"
-              {...register("message", { required: true })}
-              className="shadow-md mt-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"
-            ></textarea>
-          </div>
-          <div className="mb-5">
-            <label className="text-lg flex justify-between items-end">
-              <span>Name</span>
-              {errors.name && (
-                <span className="text-xs text-red-500">Required</span>
-              )}
-            </label>
-            <div className="mt-1 flex shadow-md">
-              <span className="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100">
-                <i className="fas fa-user"></i>
-              </span>
+                  </div>
+                </div>
+                <div className="xl:col-span-2">
+                  <form className="w-full bg-white p-5 rounded-xl shadow md:p-8" onSubmit={handleSubmit(onSubmit)}
+                        method="post">
+                    <input type="hidden" name="remember" value="true"/>
+                    <div className="flex flex-col space-y-5">
+                      <input type="text"
+                             {...register("name", {required: true})}
+                             className="w-full px-6 py-3.5 rounded-lg border border-gray-200 shadow-sm appearance-none focus:outline-none focus:ring focus:border-blue-400 md:text-lg"
+                             placeholder="Full name"/>
+                      <input type="email"
+                             {...register("email", {
+                               required: true,
+                               pattern: /\S+@\S+\.\S+/,
+                             })}
+                             className="w-full px-6 py-3.5 rounded-lg border border-gray-200 shadow-sm appearance-none focus:outline-none focus:ring focus:border-blue-400 md:text-lg"
+                             placeholder="Email"/>
 
-              <input
-                type="text"
-                autoComplete="off"
-                className="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"
-                name="name"
-                {...register("name", { required: true })}
-              />
+                      <textarea name="" id="" cols="30" rows="3"
+                                {...register("message", {required: true})}
+                                className="w-full px-6 py-3.5 rounded-lg border border-gray-200 shadow-sm appearance-none resize-none focus:outline-none focus:ring focus:border-blue-400 md:text-lg"
+                                placeholder="Message"/>
+                      <div>
+                        <button type="submit"
+                                className="w-full px-8 py-3.5 transition duration-300 bg-green-500 hover:bg-green-600 shadow text-white font-semibold rounded-lg sm:w-auto">
+                          Send
+                          message
+                        </button>
+                      </div>
+
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+
+
             </div>
-          </div>
-          <div className="mb-5">
-            <label className="text-lg flex justify-between items-end">
-              <span>Email</span>
-              {errors.mail && (
-                <span className="text-xs text-red-500">Required</span>
-              )}
-            </label>
-            <div className="mt-1 flex shadow-md">
-              <span className="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100">
-                <i className="fas fa-envelope"></i>
-              </span>
+          </section>
 
-              <input
-                type="email"
-                autoComplete="off"
-                className="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"
-                name="email"
-                {...register("email", {
-                  required: true,
-                  pattern: /\S+@\S+\.\S+/,
-                })}
-              />
-            </div>
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="font-medium shadow-md rounded-none p-2 w-full focus:outline-none focus:ring-2 focus:ring-offset-2 border border-gray-900 dark:border-gray-100 bg-gray-800 dark:bg-gray-200 text-gray-200 dark:text-gray-800 hover:bg-gray-900 dark:hover:bg-gray-100"
-            >
-              Send
-            </button>
-          </div>
-        </form>
       )}
-    </div>
-  );
-};
 
+    </div>
+
+  );
+
+};
 export default ContactUsPage;
+
+

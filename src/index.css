@@ -12,12 +12,26 @@
 *:focus {
   outline: 0 !important;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root,
 .form {
   height: 100vh;
-  background-color: #111827;
+
+}
+
+link:hover {
+  cursor: pointer;
+}
+
+.navbar {
+  z-index: 1000000;
+  background-color: #1f2937;
 }
 
 body::-webkit-scrollbar-track {

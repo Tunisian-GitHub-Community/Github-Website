@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-
+import {Link} from 'react-scroll'
 import useGetEvent from "../hooks/db/useGetEvent";
 
 export const Navbar = () => {
@@ -22,8 +22,9 @@ export const Navbar = () => {
   }
 
   return (
-      <div className={"pattern"}>
-        <div data-test="Navbar" className="navbar sticky top-0 z-50    bg-cover bg-no-repeat bg-right-top xl:bg-bottom">
+      <div className="pattern  fixed sticky">
+        <div data-test="Navbar"
+             className="navbar   fixed top-0 inset-x-0  h-16  bg-cover bg-no-repeat bg-right-top xl:bg-bottom">
           <nav>
 
             <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,26 +52,25 @@ export const Navbar = () => {
                 <div className=" mx-10 px-4 flex items-baseline">
 
                   <NavLink
-                    exact
-                    to="/"
-                    className=" text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                    activeClassName="bg-gray-900 text-white rounded-md text-sm font-medium"
+                      exact
+                      to="/"
+                      className=" text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                      activeClassName="bg-gray-900 text-white rounded-md text-sm font-medium"
                   >
                     Home
                   </NavLink>
-                  <NavLink
-                    exact
-                    to="/members"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                    activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                  <Link
+                      to="members" spy={true} smooth={false}
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md pointer text-sm font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                   >
                     Members
-                  </NavLink>
+                  </Link>
                   <NavLink
-                    exact
-                    to="/projects"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                    activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                      exact
+                      to="/projects"
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                   >
                     Projects
                   </NavLink>

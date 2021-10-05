@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 
 /* the component to show instructions on how to join us,  This Component Exist in "TeamPage" Page. */
 function HowToJoin({ guideLines }) {
+  const [isActive, setIsActive] = useState(false);
   return (
     <div>
 
@@ -20,14 +21,24 @@ function HowToJoin({ guideLines }) {
               {guideLines.map((rule, i) => (
                   <div
                       key={i}
+
                       className="bg-white p-5 rounded-xl shadow space-y-2 cursor-pointer transition duration-200 hover:shadow-lg hover:text-blue-600 md:p-8">
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-between items-center ">
+
                       <h4 className="font-medium text-gray-800 mr-4">{rule.title}</h4>
-                      <span><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round"
-                                                             stroke-width="2"
-                                                             d="M19 9l-7 7-7-7"/></svg></span>
+                      <span
+                          onClick={() => setIsActive(!isActive)}>
+                        {isActive ? '-' :
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 9l-7 7-7-7"/>
+                            </svg>}
+
+                     </span>
                     </div>
+                    {isActive && <div className="accordion-content">{rule.subtitle}</div>}
                   </div>
               ))}
 

@@ -1,20 +1,20 @@
 /* eslint-disable no-undef */
 import React from "react";
-import { shallow } from "enzyme";
+import {shallow} from "enzyme";
 
-import { checkProps } from "./utils";
-import { HomePage } from "../pages/HomePage";
+import {checkProps} from "./utils";
+import {HomePage} from "../pages/HomePage";
 import cardsData from "../pages/data/HomePage.data";
 
-import { ActiviesGrid } from "../components/ActiviesGrid";
+import {Goals} from "../components/goals";
 
 const setUp = (props = {}) => {
-  const component = shallow(<HomePage challenge={props} />);
+  const component = shallow(<HomePage challenge={props}/>);
   return component;
 };
 
 let wrapper;
-const activities = shallow(<ActiviesGrid cards={cardsData} />);
+const activities = shallow(<Goals cards={cardsData}/>);
 describe("HomePage component", () => {
   beforeEach(() => {
     wrapper = setUp();
