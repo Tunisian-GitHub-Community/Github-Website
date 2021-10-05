@@ -30,14 +30,15 @@ export const ContactUsPage = () => {
   };
 
   return (
-    <div className="bg-dark white:bg-gray-900">
+    <div className="bg-dark white:bg-gray-900" id="contact">
       {formDone ? (
-        <div className="my-20 p-10 max-w-xl mx-auto shadow-md bg-gray-100 text-center animate__animated animate__bounceIn">
-          <p className="font-medium text-lg mb-5">
-            We'll get back to you shortly.
-          </p>
-          <img src="./assets/done.png" alt="" />
-        </div>
+          <div
+              className="my-20 p-10 max-w-xl mx-auto shadow-md bg-gray-100 text-center animate__animated animate__bounceIn">
+            <p className="font-medium text-lg mb-5">
+              We'll get back to you shortly.
+            </p>
+            <img src="./assets/done.png" alt=""/>
+          </div>
       ) : (
           <section className="bg-gray-100 pt-12 pb-7 lg:pb-8 lg:pt-16 xl:pt-28">
             <div className="container mx-auto px-5">

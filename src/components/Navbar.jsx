@@ -51,45 +51,47 @@ export const Navbar = () => {
               <div className="hidden md:block  ">
                 <div className=" mx-10 px-4 flex items-baseline">
 
-                  <NavLink
-                      exact
-                      to="/"
-                      className=" text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                      activeClassName="bg-gray-900 text-white rounded-md text-sm font-medium"
+                  <Link
+                      to="home" spy={true} smooth={false}
+                      activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                      className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+
                   >
                     Home
-                  </NavLink>
+                  </Link>
+                  <Link
+                      to="goals" spy={true} smooth={false}
+                      activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                      className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+
+                  >
+                    Goals
+                  </Link>
                   <Link
                       to="members" spy={true} smooth={false}
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md pointer text-sm font-medium"
-                      activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                      activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                      className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md pointer text-sm font-medium"
+
                   >
                     Members
                   </Link>
+
                   <NavLink
                       exact
-                      to="/projects"
+                      to="/timeline"
                       className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
                       activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
                   >
-                    Projects
-                  </NavLink>
-                  <NavLink
-                    exact
-                    to="/timeline"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                    activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
-                  >
                     Timeline
                   </NavLink>
-                  <NavLink
-                    exact
-                    to="/contactus"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
-                    activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                  <Link
+                      to="contact" spy={true} smooth={false}
+                      activeClass={"bg-gray-900 text-white  rounded-md text-sm text-green-500 font-medium"}
+                      className="link text-gray-300 hover:bg-gray-700 hover:text-white px-4 mx-2 py-2 rounded-md text-sm font-medium"
+
                   >
                     Contact Us
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
