@@ -25,7 +25,8 @@ const guideLines = [
   {
     title: "Scope",
     subtitle: [
-      " The code of conduct applies in both online and offline interactions between members.",
+      " The code of conduct applies in both online and offline interactions between members." +
+      "",
     ],
   },
 ];

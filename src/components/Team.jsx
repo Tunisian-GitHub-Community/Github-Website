@@ -1,60 +1,49 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Spinner from "./Spinner";
 
-export const Team = ({ team, isLoading, error }) => {
-  if (error) console.log(error);
-  if (isLoading)
-    return (
-      <div className="m-32">
-        <Spinner />
-      </div>
-    );
+export const Team = ({team}) => {
   return (
-    <div className="team">
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
-              Our Members
-            </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Passionate Students united by Code.
-            </p>
-          </div>
-          <div className="flex flex-wrap -m-2">
-            {team.map((member, i) => (
-              <div
-                data-test="member"
-                key={i}
-                className="p-2 lg:w-1/3 md:w-1/2 w-full"
-              >
-                <div className="h-full flex items-center border-gray-800 border p-4 rounded-lg">
-                  <img
-                    alt="team"
-                    className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                    src={member.img}
-                  />
-                  <div className="flex-grow">
-                    <h2 className="text-white title-font font-medium">
-                      {member.name}
-                    </h2>
-                    <p className="text-gray-500">{member.description}</p>
-                    <a
-                      className="text-indigo-600"
-                      target="_blank"
-                      href={member.link}
-                    >
-                      Github
-                    </a>
+      <section className="bg-gray-900 second-pattern py-12 lg:py-16 xl:py-28">
+        <div className="container mx-auto px-5">
+          <div className="grid gap-6 lg:gap-10 xl:grid-cols-3">
+            <div className="space-y-2 lg:space-y-4">
+              <h2 className="text-2xl font-bold text-gray-50 sm:text-3xl">Our team</h2>
+              <p className="w-full sm:w-1/2 xl:w-80 text-gray-100 md:text-lg">Meet the team moderating our Community</p>
+            </div>
+            <div className="grid gap-6 grid-cols-2 md:grid-cols-5 lg:gap-12 xl:col-span-2">
+              {team.map((member, i) => (
+                  <div className="space-y-5" data-test="member"
+                       key={i}>
+                    <img className="rounded-xl shadow transition-shadow duration-200 hover:shadow-lg"
+                         src={member.img} alt="github tunisian community"/>
+                    <div className="space-y-1">
+                      <h4 className="font-medium text-gray-50 lg:text-lg">   {member.name}</h4>
+
+                      <a
+                          href={member.link}
+                          className="text-sm py-1 font-light  text-white capitalize transition-colors duration-200 transform text-green-500 rounded-md ">
+                        GitHub
+
+                      </a>
+
+                    </div>
+
                   </div>
-                </div>
-              </div>
-            ))}
+              ))}
+
+
+            </div>
+
+
           </div>
+
+
         </div>
+
+
       </section>
-    </div>
+
+
   );
 };
 
