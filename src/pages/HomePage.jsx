@@ -6,6 +6,7 @@ import {Team} from "../components/Team";
 import teamData from "./data/TeamPage.data";
 import goalsData from "./data/Goals.data";
 import ContactUsPage from "./ContactUsPage";
+import {NavLink} from "react-router-dom";
 // import Modal from '../components/Modal'; // promote an event
 export const HomePage = () => {
     return (
@@ -15,6 +16,7 @@ export const HomePage = () => {
             <ActiviesGrid goals={goalsData}/>
             <Team team={teamData}/>
             <ContactUsPage/>
+
 
             <div
                 className="px-6 py-6 pattern mb-12 bg-gray-800  md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
@@ -28,19 +30,23 @@ export const HomePage = () => {
                 </div>
                 <div className="mt-8 ">
                     <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                        <button
-                            className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:bg-purple-400 transition duration-150 ease-in-out">
+                        <NavLink
+                            to="/timeline"
+                            exact
+                            activeClassName="bg-gray-900 text-white  rounded-md text-sm font-medium"
+                            className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:bg-green-700 transition duration-150 ease-in-out">
                             Check past events
-                        </button>
+                        </NavLink>
                     </div>
 
                     <p className="text-sm leading-5 mt-1 text-indigo-200">
-                        Join our Discord Server <span className={"text-green-500"}>here </span> to attend our future
+                        Join our Discord Server <a href="https://discord.gg/MzXu6mM5eN"
+                                                   className={"text-green-500 hover:text-green-50"}>here </a> to attend
+                        our future
                         events.
                     </p>
                 </div>
             </div>
-
 
         </div>
     );

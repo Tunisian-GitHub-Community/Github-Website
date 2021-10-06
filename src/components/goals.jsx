@@ -19,16 +19,16 @@ export const Goals = ({goals}) => (
                   <div key={i}
                        className=" bg-white p-5 rounded-xl shadow space-y-2 transition-shadow duration-200 ">
                     <dt>
-                      <div
+                      <span
 
-                          className="absolute flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white">
+                          className="absolute icon-goal  flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white">
                         {goal.svg}
-                      </div>
-                      <p className="ml-16 text-xl font-medium">{goal.title}</p>
+                      </span>
+                        <p className="ml-20 text-xl font-medium">{goal.title}</p>
                     </dt>
-                    <dd className="ml-16 text-gray-500">
-                      {goal.subtitle}
-                    </dd>
+                      <dd className="ml-20 text-gray-500">
+                          {goal.subtitle}
+                      </dd>
                   </div>
 
               ))}

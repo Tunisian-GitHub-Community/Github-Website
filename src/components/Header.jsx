@@ -37,7 +37,7 @@ function Header() {
                             aria-label="Email address"
                         />
                         <button
-                            className="block w-full px-4 mt-4 py-2 font-semibold text-white transition-colors duration-200 transform bg-gray-900 rounded-md hover:bg-gray-800 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-800 dark:focus:bg-gray-700">
+                            className="block w-full px-4 mt-4 py-2 font-semibold text-white duration-200  bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-gray-800 ">
                           Keep me updated
                         </button>
                       </div>

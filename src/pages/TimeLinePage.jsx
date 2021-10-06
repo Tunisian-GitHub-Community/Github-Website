@@ -1,57 +1,95 @@
 import React from "react";
-import TimeAgo from "react-timeago";
 
 import useGetTimeline from "../hooks/db/useGetTimeline";
 
 import Spinner from "../components/Spinner";
 
 function TimeLinePage() {
-  const { data, isLoading } = useGetTimeline();
+    const {data, isLoading} = useGetTimeline();
 
-  if (isLoading) return <Spinner />;
+    if (isLoading) return <Spinner/>;
 
-  let timelineData = [...data.events];
-  let style;
-  return (
-    <div className="container mb-3 mx-auto ">
-      <div className="relative wrap overflow-hidden p-10 h-full">
-        <div
-          className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
-          style={{ left: "50%" }}
-        ></div>
-        {timelineData.reverse().map((event, i) => {
-          style =
-            i % 2 == 0
-              ? "mb-8 flex justify-between items-center w-full right-timeline"
-              : "mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline";
-          return (
-            <div className={style} key={i}>
-              <div className="order-1 w-5/12"></div>
-              <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-                <h1 className="mx-auto font-semibold text-lg text-white">
-                  {timelineData.length - i}
-                </h1>
-              </div>
-              <div className="order-1 bg-gray-300 transform hover:scale-105	motion-reduce:transform-none rounded-lg shadow-xl w-5/12 px-6 py-4">
-                <h3 className=" font-bold text-gray-800 text-xl">
-                  {event.title}
-                </h3>
-                <h5 className="font-bold text-gray-800 text-sm">
-                  {event.subTitle}
-                </h5>
-                <h6 className="mb-3 font-bold text-gray-400 text-xs">
-                  <TimeAgo date={event.date} />
-                </h6>
-                <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
-                  {event.description}
-                </p>
-              </div>
+    let timelineData = [...data.events];
+
+    return (
+
+        <div className=" px-6 py-12 mx-auto bg-gray-900 mt-6 pattern mx-auto ">
+
+            <div className=" ">
+                <div
+                    className="lg:flex lg:items-center lg:justify-between w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
+                    <h2 className="text-3xl font-bold text-black dark:text-white sm:text-4xl">
+            <span className="block text-gray-50">
+                Want to attend our future events?
+            </span>
+                        <span className="block text-indigo-500">
+                Join our Discord
+            </span>
+                    </h2>
+                    <div className="lg:mt-0 lg:flex-shrink-0">
+                        <div className=" inline-flex rounded-md shadow">
+                            <a type="button"
+                               href="https://discord.gg/MzXu6mM5eN"
+                               className="py-4 px-6 sm:mt-5 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                Discord Server Invitation
+                            </a>
+                        </div>
+                        <div className="ml-3 inline-flex rounded-md shadow">
+                            <a type="button"
+                               href="https://www.facebook.com/GitHubTunisia/"
+                               className="md:mt-8 py-4 px-6   bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                Facebook Group
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+
+            <div className=" container px-4 py-5 border-b rounded-t sm:px-6">
+                <div className="bg-gray-900 shadow overflow-hidden sm:rounded-md">
+                    <ul className="divide-y divide-gray-200">
+                        {timelineData.reverse().map((event, i) => {
+
+                            return (
+                                <li key={i}>
+                                    <a className="block hover:bg-gray-800">
+                                        <div className="px-4 py-4 sm:px-6">
+                                            <div className="flex items-center justify-between">
+                                                <p className="text-md text-gray-50 dark:text-white md:truncate">
+                                                    {event.title}
+                                                </p>
+                                                <br/>
+
+                                                <div className="ml-2 flex-shrink-0 flex">
+                                                    <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-300 text-green-900 px-5">
+                                                        {event.subTitle}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <p className="text-sm text-gray-400 dark:text-white ">
+                                                {event.description}
+                                            </p>
+                                            <div className="mt-2 sm:flex sm:justify-between">
+                                                <div className="sm:flex">
+                                                    <p className="flex items-center text-md font-light text-gray-300">
+                                                        {event.date}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            );
+                        })};
+                    </ul>
+                    <div className="p-4 w-full md:w-1/2 mx-auto">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    );
 }
 
 export default TimeLinePage;

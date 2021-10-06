@@ -29,6 +29,10 @@ link:hover, .link:hover {
   cursor: pointer;
 }
 
+.icon-goal {
+  z-index: 0.1;
+}
+
 .navbar {
   z-index: 1000000;
   background-color: #1f2937;
