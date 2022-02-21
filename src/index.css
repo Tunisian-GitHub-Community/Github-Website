@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+*:focus {
+  outline: 0 !important;
+}
+html,
+body,
+#root,
+.form {
+  height: 100vh;
+  background-color: #111827;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #374151;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #374151;
+}
+
+.gradient {
+  background: linear-gradient(90deg, #038a5f 0%, #10b981 100%);
+}
+
+.team {
+  color: #1f2937;
+}
+.WhereToGoPage {
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  animation-name: blur;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  color: white;
+  font-size: 1em;
+}
+.Spinner {
+  overflow: hidden !important;
+  width: 100vw;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.2);
+}
+
+form > div {
+  width: 100%;
+}

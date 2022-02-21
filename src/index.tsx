@@ -6,7 +6,8 @@ import * as ReactDOM from 'react-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 // Use consistent styling
-import 'sanitize.css/sanitize.css';
+import './index.css';
+import 'tailwindcss/tailwind.css';
 
 import { App } from 'app';
 
