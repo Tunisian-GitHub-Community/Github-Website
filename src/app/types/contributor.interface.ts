@@ -6,8 +6,16 @@ export interface IContributor {
 }
 
 export interface IContributorResponse {
-  node: {
-    emoji: string;
-    user: IContributor;
+  data: {
+    organization: {
+      memberStatuses: {
+        edges: {
+          node: {
+            emoji: string;
+            user: IContributor;
+          };
+        }[];
+      };
+    };
   };
 }

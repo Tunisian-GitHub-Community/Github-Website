@@ -28,7 +28,7 @@ export class GenericService<T> {
 
   getDoc = async <T>() => {
     try {
-      const ref = GenericService.dataBase.doc(Utils.db_url + this.prefix);
+      const ref = GenericService.dataBase.doc(Utils.DB_URL + this.prefix);
       const snapShot = await ref.get();
       return snapShot.data() as T;
     } catch (err) {

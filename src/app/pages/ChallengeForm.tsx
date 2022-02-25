@@ -1,9 +1,9 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
-import { ChallengeService } from 'app/services/challenge.service';
 import React from 'react';
+
+import { ChallengeService } from 'app/services/challenge.service';
 import Spinner from '../components/Spinner';
 
-export const ChallengeForm = ({ history }) => {
+export const ChallengeForm = () => {
   const { data, isLoading } = new ChallengeService().useGetDoc();
   if (isLoading) return <Spinner />;
   if (!data?.open)
@@ -12,6 +12,7 @@ export const ChallengeForm = ({ history }) => {
   return (
     <iframe
       src={data.link}
+      title="Challenge Form"
       width="100%"
       height="190%"
       frameBorder="0"

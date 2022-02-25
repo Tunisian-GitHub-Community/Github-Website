@@ -1,6 +1,8 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 
+// TODO : REMOVE THIS FILE => CREATE NEW SERVICE
+
 let firebaseConfig = {
   apiKey: process.env.REACT_APP_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -14,44 +16,6 @@ let firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 export const db = firebase.firestore();
-
-export const getTimeline = async () => {
-  try {
-    const ref = db.doc('data/timeline');
-    const snapShot = await ref.get();
-    console.log(snapShot.data());
-    if (snapShot.exists) return snapShot.data();
-
-    throw new Error("Couldn't fetch timeline from the database.");
-  } catch (err) {
-    console.log(err);
-  }
-};
-export const getChallenge = async () => {
-  try {
-    const ref = db.doc('data/challenge');
-    const snapShot = await ref.get();
-    console.log(snapShot.data());
-    if (snapShot.exists) return snapShot.data();
-
-    throw new Error("Couldn't fetch challenge from the database.");
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const getEvent = async () => {
-  try {
-    const ref = db.doc('data/event');
-    const snapShot = await ref.get();
-    console.log(snapShot.data());
-    if (snapShot.exists) return snapShot.data();
-
-    throw new Error("Couldn't fetch event from the database.");
-  } catch (err) {
-    console.log(err);
-  }
-};
 
 export const postContactData = async data => {
   try {
