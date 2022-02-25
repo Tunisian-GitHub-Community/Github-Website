@@ -19,6 +19,7 @@ export const getTimeline = async () => {
   try {
     const ref = db.doc('data/timeline');
     const snapShot = await ref.get();
+    console.log(snapShot.data());
     if (snapShot.exists) return snapShot.data();
 
     throw new Error("Couldn't fetch timeline from the database.");
@@ -30,6 +31,7 @@ export const getChallenge = async () => {
   try {
     const ref = db.doc('data/challenge');
     const snapShot = await ref.get();
+    console.log(snapShot.data());
     if (snapShot.exists) return snapShot.data();
 
     throw new Error("Couldn't fetch challenge from the database.");
@@ -42,6 +44,7 @@ export const getEvent = async () => {
   try {
     const ref = db.doc('data/event');
     const snapShot = await ref.get();
+    console.log(snapShot.data());
     if (snapShot.exists) return snapShot.data();
 
     throw new Error("Couldn't fetch event from the database.");

@@ -1,16 +1,16 @@
 import React from 'react';
 import TimeAgo from 'react-timeago';
 
-import useGetTimeline from '../hooks/db/useGetTimeline';
+import { TimelineService } from 'app/services/timeline.service';
 
 import Spinner from '../components/Spinner';
 
 function TimeLinePage() {
-  const { data = { events: [] }, isLoading } = useGetTimeline();
+  const { data, isLoading } = new TimelineService().useGetDoc();
 
   if (isLoading) return <Spinner />;
 
-  let timelineData = [...data.events];
+  let timelineData = data?.events || [];
   let style;
   return (
     <div className="container mb-3 mx-auto ">

@@ -1,16 +1,15 @@
-import { JSXElement } from '@babel/types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import useGetEvent from '../hooks/db/useGetEvent';
+import { EventService } from 'app/services/event.service';
 
 export const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
 
-  const { data = {} } = useGetEvent();
+  const { data } = new EventService().useGetDoc();
 
   let navButton: any = null;
-  if (data.open) {
+  if (data?.open) {
     navButton = (
       <NavLink
         to="/currentform"

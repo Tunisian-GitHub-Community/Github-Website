@@ -14,11 +14,10 @@ import { App } from 'app';
 import reportWebVitals from 'reportWebVitals';
 
 // Initialize languages
-import './locales/i18n';
+//import './locales/i18n';
 
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 const queryClient = new QueryClient();
-
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>

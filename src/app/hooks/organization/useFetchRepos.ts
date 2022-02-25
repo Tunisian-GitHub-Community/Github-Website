@@ -24,6 +24,7 @@ const fetchRepos = async () => {
     }
   `;
   const data = await graphQLClient.request(query);
+  console.log(data.organization.repositories.edges);
   return data.organization.repositories.edges;
 };
 

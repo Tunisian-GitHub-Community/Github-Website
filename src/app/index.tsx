@@ -29,16 +29,13 @@ const WhereToGoPage = React.lazy(() => import('./pages/WhereToGoPage'));
 
 export function App() {
   const { i18n } = useTranslation();
-  /**
-      <Helmet
-        titleTemplate="%s - GitHub Tunisia"
-        defaultTitle="Github Tunisia"
-        htmlAttributes={{ lang: i18n.language }}
-      >
-        <meta name="description" content="GitHub's Tunisian Community" />
-      </Helmet>
-      */
-
+  <Helmet
+    titleTemplate="%s - GitHub Tunisia"
+    defaultTitle="Github Tunisia"
+    htmlAttributes={{ lang: i18n.language }}
+  >
+    <meta name="description" content="GitHub's Tunisian Community" />
+  </Helmet>;
   return (
     <BrowserRouter>
       <React.Suspense data-test="App" fallback={<Spinner />}>

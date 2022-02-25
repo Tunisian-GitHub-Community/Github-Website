@@ -3,12 +3,9 @@
   "version": "0.2.0",
   "private": false,
   "dependencies": {
-    "@craco/craco": "6.4.3",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
     "@types/fontfaceobserver": "2.1.0",
-    "@types/jest": "27.4.0",
-    "@types/node": "14.14.31",
     "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
     "@types/react-router-dom": "5.3.2",
@@ -19,7 +16,6 @@
     "@types/testing-library__jest-dom": "5.14.2",
     "@types/webpack": "5.28.0",
     "@types/webpack-env": "1.16.3",
-    "autoprefixer": "10.4.2",
     "chalk": "4.1.2",
     "cross-env": "7.0.3",
     "eslint-config-prettier": "8.3.0",
@@ -41,8 +37,6 @@
     "lint-staged": "12.1.7",
     "node-plop": "0.26.2",
     "plop": "2.7.4",
-    "postcss": "8.4.6",
-    "postcss-cli": "^7",
     "prettier": "2.5.1",
     "react": "17.0.2",
     "react-app-polyfill": "3.0.0",
@@ -68,19 +62,26 @@
     "stylelint-config-recommended": "6.0.0",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-processor-styled-components": "1.10.0",
-    "tailwindcss": "3.0.23",
     "ts-node": "10.4.0",
-    "typescript": "4.5.4",
-    "web-vitals": "2.1.2"
+    "web-vitals": "2.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.16",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "postcss-cli": "^9.1.0",
+    "postcss-preset-env": "^7.3.1",
+    "tailwindcss": "3.x",
+    "typescript": "^4.5.5"
   },
   "scripts": {
-    "build": "craco build",
-    "build:ci": "craco build",
-    "test": "craco test",
-    "test:ci": "craco test",
-    "start:dev": "craco start",
-    "start:prod": "yarn run build && serve -s build",
-    "eject": "craco eject",
+    "build": "react-scripts build",
+    "build:ci": "react-scripts build",
+    "test": "react-scripts test",
+    "test:ci": "react-scripts test",
+    "start:dev": "react-scripts start",
+    "start:prod": "yarn build && serve -s build",
+    "eject": "react-scripts eject",
     "test:generators": "ts-node ./internals/testing/generators/test-generators.ts",
     "checkTs": "tsc --noEmit",
     "eslint": "eslint --ext js,ts,tsx",
@@ -135,5 +136,8 @@
         "statements": 90
       }
     }
+  },
+  "devDependencies": {
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

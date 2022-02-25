@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Spinner from '../components/Spinner';
-import useGetEvent from '../hooks/db/useGetEvent';
+import { EventService } from 'app/services/event.service';
 
 function QuestionsPage() {
-  const { data = { slido: '', open: false }, isLoading } = useGetEvent();
+  const { data, isLoading } = new EventService().useGetDoc();
 
   if (isLoading) return <Spinner />;
-  if (!data.open)
+  if (!data?.open || !data?.slido)
     throw new Error('Sorry, this page is closed for the moment. 😞');
   return (
     <iframe

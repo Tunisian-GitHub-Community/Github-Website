@@ -1,11 +1,19 @@
 module.exports = {
-  purge: ['./src/**/*.html', './src/**/*.jsx'],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
+  variants: {},
   plugins: [],
+  purge: {
+    // Filenames to scan for classes
+    content: [
+      './src/**/*.html',
+      './src/**/*.js',
+      './src/**/*.jsx',
+      './src/**/*.ts',
+      './src/**/*.tsx',
+      './public/index.html',
+    ],
+    // Options passed to PurgeCSS
+  },
 };

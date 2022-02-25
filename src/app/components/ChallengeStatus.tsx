@@ -1,20 +1,19 @@
+import { ChallengeService } from 'app/services/challenge.service';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-import useGetChallenge from '../hooks/db/useGetChallenge';
 
 const ChallengeStatus = () => {
   const hide = () => {
     //document.getElementById('hide').style.display = 'none';
   };
 
-  const { data = {}, isLoading } = useGetChallenge();
+  const { data, isLoading } = new ChallengeService().useGetDoc();
   const status = {
     text: "This month's challenge is closed.",
     color: 'bg-red-600',
   };
-  if (isLoading || !data.open) return null;
-  if (data.open) {
+  if (isLoading || !data?.open) return null;
+  if (data?.open) {
     status.text = "This month's challenge is open.";
     status.color = 'bg-green-600';
   }
