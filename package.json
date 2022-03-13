@@ -78,7 +78,7 @@
     "build:ci": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "react-scripts test",
-    "start:dev": "react-scripts start",
+    "dev": "react-scripts start",
     "start:prod": "yarn build && serve -s build",
     "eject": "react-scripts eject",
     "test:generators": "ts-node ./internals/testing/generators/test-generators.ts",
