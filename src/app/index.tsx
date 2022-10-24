@@ -17,8 +17,8 @@ import Navbar from './components/Navbar';
 import IconToOrg from './components/IconToOrg';
 import Footer from './components/Footer';
 
-import HomePage from './pages/HomePage';
 const MembersPage = React.lazy(() => import('./pages/MembersPage'));
+const HomePage = React.lazy(() => import('./pages/HomePage'));
 const ProjectsPage = React.lazy(() => import('./pages/ProjectsPage'));
 const TimeLinePage = React.lazy(() => import('./pages/TimeLinePage'));
 const ContactUsPage = React.lazy(() => import('./pages/ContactUsPage'));
@@ -26,6 +26,7 @@ const QuestionsPage = React.lazy(() => import('./pages/QuestionsPage'));
 const ChallengeForm = React.lazy(() => import('./pages/ChallengeForm'));
 const CurrentForm = React.lazy(() => import('./pages/CurrentForm'));
 const WhereToGoPage = React.lazy(() => import('./pages/WhereToGoPage'));
+const LoginPage = React.lazy(() => import('./pages/Authentication/LoginPage'));
 
 export function App() {
   const { i18n } = useTranslation();
@@ -51,6 +52,7 @@ export function App() {
               <Route exact path="/questions" component={QuestionsPage} />
               <Route exact path="/challenge" component={ChallengeForm} />
               <Route exact path="/currentform" component={CurrentForm} />
+              <Route exact path="/login" component={LoginPage} />
               <Route path="*" component={WhereToGoPage} />
             </Switch>
           </ErrorBoundry>

@@ -11,7 +11,16 @@ exports[`<App /> should render and match the snapshot 1`] = `
       <ErrorBoundry>
         <Switch>
           <Route
-            component={[Function]}
+            component={
+              Object {
+                "$$typeof": Symbol(react.lazy),
+                "_init": [Function],
+                "_payload": Object {
+                  "_result": [Function],
+                  "_status": -1,
+                },
+              }
+            }
             exact={true}
             path="/"
           />
@@ -112,6 +121,20 @@ exports[`<App /> should render and match the snapshot 1`] = `
             }
             exact={true}
             path="/currentform"
+          />
+          <Route
+            component={
+              Object {
+                "$$typeof": Symbol(react.lazy),
+                "_init": [Function],
+                "_payload": Object {
+                  "_result": [Function],
+                  "_status": -1,
+                },
+              }
+            }
+            exact={true}
+            path="/login"
           />
           <Route
             component={

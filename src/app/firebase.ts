@@ -1,3 +1,4 @@
+import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 
@@ -16,6 +17,38 @@ let firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 export const db = firebase.firestore();
+
+export const auth = getAuth(firebase.initializeApp(firebaseConfig));
+
+export const postLoginData = async data => {
+  try {
+    const createdAt = new Date();
+    const contactRef = db.collection(`Users`);
+    await contactRef.add({
+      ...data,
+      createdAt,
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const loginWithEmailAndPassword = async (email, password) => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    await db.collection(`Users`).add({
+      email,
+      authProvider: 'local',
+    });
+  } catch (err: any) {
+    console.log(err);
+    alert(err.message);
+  }
+};
+
+export const logOut = () => {
+  signOut(auth);
+};
 
 export const postContactData = async data => {
   try {
