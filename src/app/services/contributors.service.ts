@@ -10,7 +10,7 @@ export class ContributorsService extends GenericGitHubService<IContributor> {
       gql`
         {
           organization(login: "Tunisian-GitHub-Community") {
-            memberStatuses(first: 20) {
+            membersWithRole(first: 20) {
               edges {
                 node {
                   emoji
